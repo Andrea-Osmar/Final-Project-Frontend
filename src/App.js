@@ -3,7 +3,7 @@ import React from 'react'
 export const App = () => {
   return (
     <div>
-      Find me in src/app.js!
+      <h1> EN BOSTAD </h1>
     </div>
   )
 }

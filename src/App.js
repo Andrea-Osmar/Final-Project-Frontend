@@ -1,9 +1,15 @@
 import React from 'react'
+import { BrowserRouter, Switch, Route } from "react-router-dom"
 
+import { Login } from './Pages/Login'
 export const App = () => {
   return (
-    <div>
-      <h1> EN BOSTAD </h1>
-    </div>
+  <BrowserRouter>
+    <Switch>
+      <Route path="/login">
+        <Login />
+      </Route>
+    </Switch>
+  </BrowserRouter>
   )
 }

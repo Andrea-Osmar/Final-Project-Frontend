@@ -2,7 +2,7 @@ import React, { useState } from "react"
 
 import { SignUp } from "./SignUp"
 import { SignIn } from './SignIn'
-import { List } from './Listings'
+import { List } from './List'
 
 import { signUpUrl, signInUrl } from "../Paths/api-paths"
 import { ToggleButton } from '../Components/ToggleButton'

@@ -55,7 +55,7 @@ export const SignUp = ({ signUp, signUpStatus }) => {
 				></input>
 				<input
 					type="password"
-					id="passWord"
+					id="password"
 					required
 					placeholder="Password"
 					onChange={(event) => setPassword(event.target.value)}

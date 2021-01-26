@@ -5,6 +5,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom"
 import { Users } from "./Pages/Users"
 import { Navbar } from "./Components/Navbar"
 import { List } from "./Pages/List"
+import { Map } from "./Components/Map"
 
 export const App = () => {
   return (
@@ -12,7 +13,7 @@ export const App = () => {
 	<Navbar />
     <Switch>
       <Route path="/">
-        <List />
+        <Users />
       </Route>
       <Route path="/users" component={Users}>
         <Users />

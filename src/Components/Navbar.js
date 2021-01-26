@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { Link } from 'react-router-dom'
 
 export const Navbar = () => {
@@ -7,7 +6,9 @@ export const Navbar = () => {
     <>
       <nav className='navbar'>
         <div className='navbar-container'>
+          <h1 className="navbar-logo">
             En Bostad
+          </h1>
           <ul>
             <li className='nav-item'>
               <Link to='/' className='nav-links'>

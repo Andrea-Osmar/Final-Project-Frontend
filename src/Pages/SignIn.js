@@ -18,7 +18,7 @@ export const SignIn = ({ signIn, signInStatus }) => {
 	return (
 		<section>
 			<form onSubmit={(event) => handleSignIn(event)} className="form">
-				<h2>Sign in here</h2>
+				<h2 className="signIn" id="signIn">Sign in here</h2>
 				<input
 					type="email"
 					id="email"

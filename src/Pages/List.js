@@ -6,14 +6,13 @@ import { MapBox } from 'Components/MapBox'
 
 export const List = () => {
   const [list, setList] = useState([])
-
-  useEffect(() => {
+	
+	useEffect(() => {
     fetch(listUrl)
     .then((res) => res.json())
     .then((json) => {
       setList(json)
 			console.log(json)
-			
     })
 	}, [])
 

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "@googlemaps/js-api-loader": "^1.11.1",
     "@react-google-maps/api": "^2.1.1",
     "babel-eslint": "^10.1.0",
     "dotenv": "^8.2.0",
@@ -13,12 +14,14 @@
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^2.5.1",
     "google-map-react": "^2.1.9",
+    "google-maps-react": "^2.0.6",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-google-maps": "^9.4.5",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.4",
-    "save": "^2.4.0"
+    "save": "^2.4.0",
+    "swr": "^0.4.0"
   },
   "scripts": {
     "start": "react-scripts start",

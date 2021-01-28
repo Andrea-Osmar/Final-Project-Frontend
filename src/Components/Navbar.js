@@ -9,7 +9,11 @@ export const Navbar = () => {
           <h1 className="navbar-logo">
             En Bostad
           </h1>
-          <ul>
+          <Link to="/signIn">
+            <button>Sign In</button>
+          </Link>
+
+          {/* <ul>
             <li className='nav-item'>
               <Link to='/' className='nav-links'>
                 Home
@@ -31,7 +35,7 @@ export const Navbar = () => {
                 List
               </Link>
             </li>
-          </ul>
+          </ul> */}
         </div>
       </nav>
     </>

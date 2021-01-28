@@ -20,7 +20,7 @@ export class CurrentLocation extends React.Component {
       },
     }
   } 
-  // recenter map to current location
+  //recenter map to current location
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.google !== this.props.google) {
       this.loadMap()
@@ -29,16 +29,16 @@ export class CurrentLocation extends React.Component {
       this.recenterMap()
     }
   }
-  // change center of the map
+  //change center of the map
   recenterMap() {
-    const map = this.map
-    const current = this.state.currentLocation
-    const google = this.props.google
-    const maps = google.maps
+    const map = this.map;
+    const current = this.state.currentLocation;
+    const google = this.props.google;
+    const maps = google.maps;
 
     if (map) {
-      let center = new maps.LatLng(current.lat, current.lng)
-      map.panTo(center)
+      let center = new maps.LatLng(current.lat, current.lng);
+      map.panTo(center);
     }
   }
   // callback to fetch current location

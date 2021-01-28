@@ -9,8 +9,8 @@ export const Navbar = () => {
           <h1 className="navbar-logo">
             En Bostad
           </h1>
-          <Link to="/signIn">
-            <button>Sign In</button>
+          <Link to="/users">
+            <button className='navbar-button'>Sign In</button>
           </Link>
 
           {/* <ul>

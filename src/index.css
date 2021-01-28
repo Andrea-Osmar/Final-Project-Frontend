@@ -12,7 +12,17 @@ code {
     monospace;
 }
 
+h1 {
+  text-align: center;
+}
 
+h3 {
+  text-align: center;
+}
+
+p {
+  margin: 2px;
+}
 /* NAVBAR */
 
 .navbar {	
@@ -44,6 +54,10 @@ code {
   height: 100%;	
 }	
 
+.navbar-button {
+  margin-left: 20px;
+}
+
 ul {
   display: flex;
   list-style-type: none;
@@ -51,18 +65,59 @@ ul {
 
 /* LIST */
 
+.list-container {
+  display: flex;
+  flex-direction: row-reverse;
+}
 .listName {
   display: flex;
   flex-direction: column;
   border: 2px black solid;
   align-items: center;
-  width: 30%;
+  width: 90%;
   margin: 10px;
 }
 
+.list-location {
+  border: none;
+  background: none;
+}
+
+.button-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 /* MAP */
 
 .map-wrapper {
   width: 100%;
   height: 100%;
+}
+
+.house-marker {
+  background: none;
+  border: none;
+}
+
+.house-marker img,
+.house-logo {
+  width: 20px;
+  height: 20px;
+}
+
+.cluster-marker {
+  color: #fff;
+  background: #1978c8;
+  border-radius: 50%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrap {
+  position: sticky;
+  height: 80%;
+  width: 80%;
 }

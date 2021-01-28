@@ -21,7 +21,9 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.4",
     "save": "^2.4.0",
-    "swr": "^0.4.0"
+    "supercluster": "^7.1.2",
+    "swr": "^0.4.0",
+    "use-supercluster": "^0.2.9"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -4,26 +4,21 @@ import { BrowserRouter, Switch, Route } from "react-router-dom"
 import { SignIn } from './Pages/SignIn'
 import { Users } from "./Pages/Users"
 import { Navbar } from "./Components/Navbar"
-import { List } from "./Pages/List"
-
-
+//import { List } from "./Pages/List"
 
 export const App = () => {
   return (
   <BrowserRouter>
 	<Navbar />
     <Switch>
-      <Route path="/" exakt>
-        <List />
+      <Route path="/" exact>
+        <Users />
       </Route>
       <Route path="/users" exakt>
         <Users />
       </Route>
       <Route path="/signIn" exakt>
         <SignIn />
-      </Route>
-      <Route path="list" exakt> 
-        <List />
       </Route>
     </Switch>
   </BrowserRouter>

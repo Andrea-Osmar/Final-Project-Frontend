@@ -12,11 +12,10 @@ export const List = () => {
     .then((res) => res.json())
     .then((json) => {
       setList(json)
-			console.log(json)
     })
 	}, [])
 
-  return (
+  return (	
 		<>
 		<h1>Lägenheter i Stockholm</h1>
     <section className="list-container">
@@ -25,16 +24,21 @@ export const List = () => {
 			</div>
 			<div className='list-wrapper'>
 			{list.map(list => (
-					<div className='listName' key={list.Id}>
+					<div className='listName' key={list.annonsId}>
 						<h3>{list.Gatuadress}</h3>
+						<button className='list-location'><img className='house-logo' src="/houses.png" alt="house"/></button>
 						<p>{list.Stadsdel}</p>
 						<p>{list.AntalRum} Rum</p>
+						<div className='list-arrow'>
+						<i className="fas fa-chevron-down"></i>
+						</div>
+						<div className='list-details'>
 						<p>{list.Yta} kvm</p>
 						<p>{list.Hyra} :-/månad</p>
-						<a className="list-details" key={list.AnnonsId} href={`https://bostad.stockholm.se/${list.Url}`} target="_blank" rel="noopener noreferrer">Details</a>
 						<div className='button-wrapper'>
-						<SaveButton />
-						<button className='list-location'><img className='house-logo' src="/houses.png" alt="house"/></button>
+							<SaveButton />
+						<a className="list-url" key={list.annonsId} href={`https://bostad.stockholm.se/${list.Url}`} target="_blank" rel="noopener noreferrer">Details <span><i className="fas fa-angle-right"></i></span></a>
+					</div>
 					</div>
 					</div>
 			))}

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -5,6 +7,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #e4dede;
+  font-family: 'Montserrat', sans-serif;
 }
 
 code {
@@ -18,20 +22,18 @@ h1 {
 
 h3 {
   text-align: center;
+  font-size: 17px;
 }
 
 p {
   margin: 2px;
+  font-size: 14px;
 }
 /* NAVBAR */
 
 .navbar {	
   background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);	
-  height: 80px;	
-  display: flex;	
-  justify-content: center;	
-  align-items: center;	
-  font-size: 1.2rem;	
+  height: 80px;		
   position: sticky;	
   top: 0;	
   z-index: 999;
@@ -39,7 +41,7 @@ p {
 }	
 .navbar-container {	
   display: flex;	
-  justify-content: center;	
+  justify-content: space-between;	
   align-items: center;	
   height: 80px;	
   max-width: 1500px;	
@@ -55,12 +57,19 @@ p {
 }	
 
 .navbar-button {
-  margin-left: 20px;
+  margin-right: 20px;
 }
 
-ul {
+.navbar-logo {
+  color: #fff;
+  text-decoration: none;
+  font-size: 30px;
+  margin-left: 30px;
+}
+
+.navbar-button-wrapper {
   display: flex;
-  list-style-type: none;
+  flex-direction: column;
 }
 
 /* LIST */
@@ -69,13 +78,41 @@ ul {
   display: flex;
   flex-direction: row-reverse;
 }
+
 .listName {
   display: flex;
   flex-direction: column;
-  border: 2px black solid;
+  border: 2px #0000002b solid;
   align-items: center;
   width: 90%;
   margin: 10px;
+  padding: 10px;
+  background-color: white;
+  box-shadow: 5px 5px 10px rgb(0 0 0 / 50%);
+  font-family: 'Montserrat', sans-serif;
+  transition: 0.4s;
+}
+
+.listName:hover {
+  transform: scale(1.02, 1.02);
+  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+    -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+
+.listName:hover .list-details {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.listName:hover .list-arrow {
+  display: none;
+}
+
+.list-details {
+  text-align: center;
+  display: none;
 }
 
 .list-location {
@@ -83,16 +120,33 @@ ul {
   background: none;
 }
 
+.list-url {
+  margin: 2px;
+  font-size: 14px;
+  color: grey;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .button-wrapper {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
+
+.save-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: gold;
+  font-size: 20px;
+}
+
 /* MAP */
 
 .map-wrapper {
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 90%;
 }
 
 .house-marker {
@@ -120,4 +174,67 @@ ul {
   position: sticky;
   height: 80%;
   width: 80%;
+  margin: 13px 25px;
+}
+
+/* MODAL */
+
+.modalBackground {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease-in-out;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+}
+
+.modalShowing-true {
+  opacity: 1;
+  pointer-events: visible;
+}
+
+.modalInner {
+  background: #1e2939;
+  width: 500px;
+  max-width: calc(100% - 60px);
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  color: white;
+  text-align: left;
+}
+
+.modalText {
+  padding: 15px;
+}
+
+.modalText p {
+  line-height: 180%;
+}
+
+.modalText button {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.modalImage img {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+}
+
+.exitButton {
+  padding: 15px;
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  border: 0;
+  color: white;
 }

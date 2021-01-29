@@ -5,7 +5,7 @@ import GoogleMapReact from "google-map-react"
 import useSupercluster from "use-supercluster";
 
 const fetcher = (...args) => fetch(...args).then(response => response.json())
- const Marker = ({children}) => children
+const Marker = ({children}) => children
 
 export const MapBox = () => {
   // Map setup

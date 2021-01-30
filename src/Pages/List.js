@@ -46,7 +46,7 @@ export const List = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Details{" "}
+                  Details
                   <span>
                     <i className="fas fa-angle-right"></i>
                   </span>
@@ -59,7 +59,5 @@ export const List = () => {
     </section>
   </>
 )
+
 }
-
-
-

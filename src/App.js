@@ -5,6 +5,7 @@ import { SignIn } from "./Pages/SignIn"
 import { Users } from "./Pages/Users"
 import { Navbar } from "./Components/Navbar"
 import { List } from "./Pages/List"
+import { Slick } from "./Components/Slick"
 
 export const App = () => {
   return (

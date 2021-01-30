@@ -29,10 +29,10 @@ const [modalState, setModalState] = useState(false)
             </p>
             
             <form action="">
-              <button>Join now!</button>
+              <button>Log In</button>
             </form>
             <button className="exitButton" onClick={() => toggleModalState()}>
-              exit
+              Close
             </button>
           </div>
         </div>
@@ -41,5 +41,3 @@ const [modalState, setModalState] = useState(false)
     </>
   )
 }
-
-

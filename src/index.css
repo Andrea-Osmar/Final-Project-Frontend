@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
 
 body {
   margin: 0;
@@ -7,7 +8,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #e4dede;
+  background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -18,58 +19,83 @@ code {
 
 h1 {
   text-align: center;
+  color: #fff;
 }
 
 h3 {
   text-align: center;
   font-size: 17px;
+  margin: 10px 0 5px;
 }
 
 p {
   margin: 2px;
   font-size: 14px;
 }
+
 /* NAVBAR */
 
 .navbar {	
   background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);	
-  height: 80px;		
+  height: 100px;	
+  display: flex;	
+  justify-content: center;	
+  align-items: center;	
+  font-size: 1.2rem;	
   position: sticky;	
   top: 0;	
   z-index: 999;
-  color: #fff;	
+  border-bottom: 1px solid #2d2d2d;
 }	
+
+.navbar-logo {
+  color: #fff;
+  text-decoration: none;
+  font-size: 40px;
+  margin-left: 50px;
+  font-family: 'Playball', cursive;
+}
+
 .navbar-container {	
   display: flex;	
-  justify-content: space-between;	
-  align-items: center;	
-  height: 80px;	
+  align-items: center;		
   max-width: 1500px;	
 }	
+
+.nav-menu {	
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  list-style: none;	
+  width: 76vw;		
+  margin-right: 2rem;	
+}
 
 .nav-links {	
   color: #fff;	
   display: flex;	
   align-items: center;	
   text-decoration: none;	
-  padding: 0.5rem 1rem;	
   height: 100%;	
+  margin: 0 15px;
 }	
 
-.navbar-button {
-  margin-right: 20px;
+.nav-links:hover {	
+  border-bottom: 4px solid #fff;	
+  transition: all 0.2s ease-out;	
+}	
+
+.fa-bars {	
+  color: #fff;	
+}	
+
+.menu-icon {	
+  display: none;	
 }
 
-.navbar-logo {
-  color: #fff;
-  text-decoration: none;
-  font-size: 30px;
-  margin-left: 30px;
-}
-
-.navbar-button-wrapper {
-  display: flex;
-  flex-direction: column;
+ul {
+  margin: 0;
+  padding: 0;
 }
 
 /* LIST */
@@ -118,6 +144,7 @@ p {
 .list-location {
   border: none;
   background: none;
+  margin: 0;
 }
 
 .list-url {
@@ -138,7 +165,7 @@ p {
   background: none;
   border: none;
   cursor: pointer;
-  color: gold;
+  color: grey;
   font-size: 20px;
 }
 
@@ -200,7 +227,7 @@ p {
 }
 
 .modalInner {
-  background: #1e2939;
+  background:#1e2939 ;
   width: 500px;
   max-width: calc(100% - 60px);
   margin: auto;
@@ -214,11 +241,7 @@ p {
   padding: 15px;
 }
 
-.modalText p {
-  line-height: 180%;
-}
-
-.modalText button {
+.modalText {
   display: block;
   width: 100%;
   text-align: center;
@@ -231,10 +254,123 @@ p {
 }
 
 .exitButton {
-  padding: 15px;
   display: block;
-  width: 100%;
+  width: 10px;
   background-color: transparent;
   border: 0;
   color: white;
+  cursor: pointer;
+}
+
+/* SIGN IN FORM */
+
+input {
+  border-radius: 3px;
+  background-color: #fff;
+  width: 200px;
+  height: 40px;
+  padding: 2px;
+  margin: 10px;
+  border: none;
+}
+
+input::placeholder {
+	font-family: "Montserrat", sans-serif;
+}
+
+button {
+  font-size: 14px;
+  text-align: center;
+  padding: 5px;
+  margin-top: 5px;
+  width: 200px;
+  border-radius: 5px;
+  color: #fff;
+  background: transparent;
+}
+
+.button:hover,
+.button-toggle:hover,
+.button-sign-out:hover
+.button:hover {
+	cursor: pointer;
+	background-color: #182624;
+}
+
+.button-toggle {
+	font-family: "Montserrat", sans-serif;
+	align-self: center;
+	color: #ffffff;
+	padding: 4px;
+	font-size: 14px;
+	text-decoration: underline;
+	background-color: transparent;
+	border: none;
+  cursor: pointer;
+  width: auto;
+}
+
+.button-sign-out {
+	width: 200px;
+	font-size: 20px;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 960px) {
+
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 90vh;
+    position: absolute;
+    top: 80px;
+    left: -100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+  }
+
+  .nav-menu.active {
+    background: #242222;
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+
+  .nav-links {
+    text-align: center;
+    padding: 2rem 0;
+    width: 100%;
+    display: table;
+  }
+
+  .nav-links:hover {
+    background-color: #fff;
+    color: #242424;
+    border-radius: 0;
+  }
+
+  .navbar-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(25%, 50%);
+  }
+
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 60%);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+  .fa-times {
+    color: #fff;
+    font-size: 2rem;
+  }
 }

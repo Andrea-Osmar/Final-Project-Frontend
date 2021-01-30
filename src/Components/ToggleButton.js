@@ -1,15 +1,15 @@
-import React from "react";
+import React from "react"
 
 export const ToggleButton = ({ mode, setModeinApp }) => {
 	const handleClick = () => {
-		console.log("clickButton");
+		console.log("clickButton")
 		if (mode === "signUp") {
-			setModeinApp("signIn");
+			setModeinApp("signIn")
 		}
 		if (mode === "signIn") {
-			setModeinApp("signUp");
+			setModeinApp("signUp")
 		}
-	};
+	}
 
 	return (
 		<button
@@ -19,5 +19,5 @@ export const ToggleButton = ({ mode, setModeinApp }) => {
 		>
 			{mode === "signUp" ? "Sign in" : "Sign up"}
 		</button>
-	);
-};
+	)
+}

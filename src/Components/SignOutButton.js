@@ -1,9 +1,9 @@
-import React from "react";
+import React from "react"
 
 export const SignOutButton = ({ signOut }) => {
 	const handleSignOut = () => {
-		signOut("");
-	};
+		signOut("")
+	}
 	return (
 		<button
 			onClick={() => handleSignOut()}
@@ -12,5 +12,5 @@ export const SignOutButton = ({ signOut }) => {
 		>
 			Sign Out
 		</button>
-	);
-};
+	)
+}

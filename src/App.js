@@ -5,9 +5,11 @@ import { SignIn } from "./Pages/SignIn"
 import { Users } from "./Pages/Users"
 import { Navbar } from "./Components/Navbar"
 import { List } from "./Pages/List"
-import { Slick } from "./Components/Slick"
+
+import { GetData } from './Pages/GetData'
 
 export const App = () => {
+
   return (
     <BrowserRouter>
       <Navbar />
@@ -20,6 +22,9 @@ export const App = () => {
         </Route>
         <Route path="/signIn" exakt>
           <SignIn />
+        </Route>
+        <Route path="/GetData" exakt>
+          <GetData />
         </Route>
       </Switch>
     </BrowserRouter>

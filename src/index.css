@@ -8,7 +8,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+  background: #8e9eab;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #eef2f3, #8e9eab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -20,6 +24,11 @@ code {
 h1 {
   text-align: center;
   color: #fff;
+}
+
+h2 {
+  color: black;
+  text-align: center;
 }
 
 h3 {
@@ -37,7 +46,7 @@ p {
 
 .navbar {	
   background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);	
-  height: 100px;	
+  height: 75px;	
   display: flex;	
   justify-content: center;	
   align-items: center;	
@@ -51,8 +60,8 @@ p {
 .navbar-logo {
   color: #fff;
   text-decoration: none;
-  font-size: 40px;
-  margin-left: 50px;
+  font-size: 35px;
+  margin-left: 46px;
   font-family: 'Playball', cursive;
 }
 
@@ -81,10 +90,11 @@ p {
   text-decoration: none;	
   height: 100%;	
   margin: 0 15px;
+  font-size: 14px;
 }	
 
 .nav-links:hover {	
-  border-bottom: 4px solid #fff;	
+  border-bottom: 2px solid #fff;	
   transition: all 0.2s ease-out;	
 }	
 
@@ -106,36 +116,50 @@ ul {
 .list-container {
   display: flex;
   flex-direction: row-reverse;
+  height: 100vh;
 }
 
-.listName {
+.list-wrapper {
+  width: 280px;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.list-wrapper::-webkit-scrollbar {
+  display: hidden;
+}
+
+.list-card {
   display: flex;
   flex-direction: column;
   border: 2px #0000002b solid;
   align-items: center;
-  width: 150px;
+  width: 200px;
   margin: 10px;
   padding: 10px;
   background-color: white;
-  box-shadow: 5px 5px 4px rgb(255 255 255 / 50%);
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
   font-family: 'Montserrat', sans-serif;
   transition: 0.4s;
 }
 
-.listName:hover {
+.list-card:hover {
   transform: scale(1.02, 1.02);
-  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
-    -5px -5px 30px 15px rgba(0,0,0,0.22);
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+      transform: translateY(2px);
+      -webkit-animation: gradientBG 1.5s ease-in-out forwards;
+      animation: gradientBG 1.5s ease-in-out forwards;
 }
 
-.listName:hover .list-details {
+.list-card:hover .list-details {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: flex-end;
 }
 
-.listName:hover .list-arrow {
+.list-card:hover .list-arrow {
   display: none;
 }
 
@@ -148,6 +172,7 @@ ul {
   border: none;
   background: none;
   margin: 0;
+  width: 30px;
 }
 
 .list-url {
@@ -170,14 +195,11 @@ ul {
   cursor: pointer;
   color: grey;
   font-size: 20px;
+  margin: 0 10px;
+  width: 30px;
 }
 
 /* MAP */
-
-.map-wrapper {
-  width: 90%;
-  height: 90%;
-}
 
 .house-marker {
   background: none;
@@ -286,7 +308,6 @@ button {
   text-align: center;
   padding: 5px;
   margin-top: 5px;
-  width: 200px;
   border-radius: 5px;
   color: #fff;
   background: transparent;
@@ -382,81 +403,3 @@ button {
     font-size: 2rem;
   }
 }
-
-
-/* SLICK */
-
-.slick-prev:before, 
-.slick-next:before {
-  color: red !important;
-}
-
-
-/* .vertical-dots
-{
-    right:10px;
-    list-style: none;
-    display: block;
-    position: absolute;
-    top: 40%;
-    margin-top: -10px;
-    text-align: right;
-} */
-/* .vertical-dots li
-{
-    position: relative;
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-}
-.vertical-dots li button
-{
-    font-size: 0;
-    line-height: 0;
-    display: block;
-    width: 20px;
-    height: 20px;
-    padding: 5px;
-    cursor: pointer;
-    color: transparent;
-    border: 0;
-    outline: none;
-    background: transparent;
-}
-.vertical-dots li button:hover,
-.vertical-dots li button:focus
-{
-    outline: none;
-}
-.vertical-dots li button:hover:before,
-.vertical-dots li button:focus:before
-{
-    opacity: 1;
-}
-.vertical-dots li button:before
-{
-    font-family: 'slick';
-    font-size: 6px;
-    line-height: 20px;
-
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 20px;
-    height: 20px;
-
-    content: '•';
-    text-align: center;
-
-    opacity: .25;
-    color: black;
-
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-.vertical-dots li.slick-active button:before
-{
-    opacity: .75;
-    color: black;
-} */

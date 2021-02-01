@@ -6,7 +6,7 @@
   
 // const fetchSavedData = () => {
 //     fetch(saveDataUrl, {
-//       method: "GET",
+//       method: "POST",
 //       headers: {
 //         Authorization: accessToken,
 //       }, 
@@ -22,8 +22,7 @@
 //   console.log(savedData)
 
 //   return (
-//     <div>
-//       <h3>This are your saved appartments</h3>    
+//     <div>   
 //       {savedData.map((favorite) => (
 //         <div className='favorite-list' key={favorite.annonsId}>
 //           <h4>{favorite.annonsId}</h4>

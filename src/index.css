@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -11,8 +17,6 @@ body {
   background: #8e9eab;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #eef2f3, #8e9eab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -21,13 +25,18 @@ code {
     monospace;
 }
 
+main {
+  height: 100vh;
+}
+
 h1 {
   text-align: center;
   color: #fff;
+  margin: 20px;
 }
 
 h2 {
-  color: black;
+  color: #fff;
   text-align: center;
 }
 
@@ -116,18 +125,28 @@ ul {
 .list-container {
   display: flex;
   flex-direction: row-reverse;
-  height: 100vh;
+  height: 90vh;
 }
 
 .list-wrapper {
-  width: 280px;
+  width: 350px;
   overflow-y: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 
 .list-wrapper::-webkit-scrollbar {
-  display: hidden;
+  display: inline;
+}
+
+.list-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+  border: 1px solid #90a0ad;   
+}
+
+.list-wrapper::-webkit-scrollbar-thumb {
+  background-color: transparent;   
+  border: 2px solid #90a0ad;  
 }
 
 .list-card {
@@ -135,21 +154,21 @@ ul {
   flex-direction: column;
   border: 2px #0000002b solid;
   align-items: center;
-  width: 200px;
+  width: 250px;
   margin: 10px;
   padding: 10px;
   background-color: white;
   box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
   font-family: 'Montserrat', sans-serif;
-  transition: 0.4s;
+  /* transition: 0.4s; */
 }
 
 .list-card:hover {
-  transform: scale(1.02, 1.02);
+  /* transform: scale(1.02, 1.02); */
   box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
-      transform: translateY(2px);
-      -webkit-animation: gradientBG 1.5s ease-in-out forwards;
-      animation: gradientBG 1.5s ease-in-out forwards;
+    transform: translateY(2px);
+    -webkit-animation: gradientBG 1.5s ease-in-out forwards;
+    animation: gradientBG 1.5s ease-in-out forwards;
 }
 
 .list-card:hover .list-details {
@@ -199,6 +218,10 @@ ul {
   width: 30px;
 }
 
+.save-button:active {
+  color: gold;
+}
+
 /* MAP */
 
 .house-marker {
@@ -208,8 +231,8 @@ ul {
 
 .house-marker img,
 .house-logo {
-  width: 20px;
-  height: 20px;
+  width: 17px;
+  height: 25px;
 }
 
 .cluster-marker {
@@ -227,6 +250,10 @@ ul {
   height: 80%;
   width: 80%;
   margin: 13px 25px;
+}
+
+.info-window {
+  font-size: 12px;
 }
 
 /* MODAL */
@@ -260,6 +287,8 @@ ul {
   flex-direction: row;
   color: white;
   text-align: left;
+  z-index: 99;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.5);;
 }
 
 .modalText {
@@ -280,7 +309,7 @@ ul {
 
 .exitButton {
   display: block;
-  width: 10px;
+  width: 35px;
   background-color: transparent;
   border: 0;
   color: white;
@@ -335,8 +364,15 @@ button {
 }
 
 .button-sign-out {
-	width: 200px;
-	font-size: 20px;
+	width: 90px;
+	font-size: 12px;
+}
+
+
+/* PROFILE */
+
+.saved-list {
+  color: red;
 }
 
 /* MEDIA QUERIES */

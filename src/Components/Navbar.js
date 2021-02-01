@@ -7,6 +7,7 @@ export const Navbar = () => {
   const handleClick = () => setClick(!click)
   const closeMobileMenu = () => setClick(false)
 
+
   return (
     <>
       <nav className='navbar'>
@@ -24,7 +25,7 @@ export const Navbar = () => {
             </Link>
           </li>
           <li className='nav-item'>
-            <Link to='users/' className='nav-links' onClick={closeMobileMenu}>
+            <Link to='/users' className='nav-links' onClick={closeMobileMenu}>
               Logga In
             </Link>
           </li>

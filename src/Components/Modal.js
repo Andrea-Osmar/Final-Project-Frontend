@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 
 export const Modal = () => {
-const [modalState, setModalState] = useState(false)
+const [modalState, setModalState] = useState(true)
 
   const toggleModalState = () => {
     setModalState(!modalState)

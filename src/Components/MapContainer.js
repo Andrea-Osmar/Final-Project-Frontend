@@ -13,8 +13,8 @@ export const MapContainer = (props) => {
       </>
     );
   } else {
-    console.log(props)
-    console.log(props.data)
+    // console.log(props)
+    // console.log(props.data)
 
     return (   
         <Map
@@ -27,7 +27,7 @@ export const MapContainer = (props) => {
             <Marker
               key={item.AnnonsId}
               title={item.Gatuadress}
-              name={item.Gatuadress}
+              name={item.Stadsdel}
               position={{ lat: item.KoordinatLatitud, lng: item.KoordinatLongitud }}
             />
           ))}
@@ -40,7 +40,7 @@ export const MapContainer = (props) => {
             }}
           >
             <div>
-              <h2>{props.selectedItem.Gatuadress}</h2>
+              <h2 className='info-window'>{props.selectedItem.Gatuadress}</h2>
             </div>
           </InfoWindow>
         </Map>

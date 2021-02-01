@@ -7,15 +7,17 @@ import { Navbar } from "./Components/Navbar"
 import { List } from "./Pages/List"
 
 import { GetData } from './Pages/GetData'
+import { SaveData } from './Components/SaveData'
 
 export const App = () => {
 
   return (
+    <main>
     <BrowserRouter>
       <Navbar />
       <Switch>
         <Route path="/" exact>
-          <List />
+          <SaveData />
         </Route>
         <Route path="/users" exakt>
           <Users />
@@ -28,6 +30,7 @@ export const App = () => {
         </Route>
       </Switch>
     </BrowserRouter>
+    </main>
   )
 }
 

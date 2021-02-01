@@ -1,34 +1,37 @@
-// import React, { useState, useEffect } from 'react'
-// import { saveDataUrl } from '../Paths/api-paths'
+import React, { useState, useEffect } from 'react'
+import { saveDataUrl } from '../Paths/api-paths'
 
-// export const SaveData = () => {
-// const [savedData, setSavedData] = useState([])
-  
-// const fetchSavedData = () => {
-//     fetch(saveDataUrl, {
-//       method: "POST",
-//       headers: {
-//         Authorization: accessToken,
-//       }, 
-//       body: annonsID
-//   })
-//   .then((res) => res.json())
-//   .then((json) => setSavedData(json.userSavedData))
-//   }
+export const SaveData = () => {
+  const [savedData, setSavedData] = useState([])
+  const [favorite, setFavorite] = useState([])
+  const tokenFromStorage = () => window.localStorage.getItem("tokenAuth") || ""
+  const [token, setToken] = useState(tokenFromStorage)
 
-//   useEffect(() => {
-//     fetchSavedData()
-//   },[])
-//   console.log(savedData)
+  const fetchSavedData = () => {
+    fetch(saveDataUrl, {
+      method: "POST",
+      body: [],
+      headers: {
+        Authorization: token,
+      }, 
+  })
+  .then((res) => res.json())
+  .then((json) => setSavedData(json.userSavedData))
+  console.log("test")
+  }
 
-//   return (
-//     <div>   
-//       {savedData.map((favorite) => (
-//         <div className='favorite-list' key={favorite.annonsId}>
-//           <h4>{favorite.annonsId}</h4>
-//         </div>
-//       ))}  
-//     </div>
-//   )
-// }
+  useEffect(() => {
+    fetchSavedData()
 
+  },[])
+
+  return (
+    <div>   
+      {/* {savedData.map((favorite) => (
+        <div className='favorite-list' key={favorite}>
+          <h4>{favorite}</h4>
+        </div>
+      ))}   */}
+    </div>
+  )
+}

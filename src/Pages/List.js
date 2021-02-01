@@ -41,12 +41,12 @@ export const List = () => {
     <section className="list-container">
       <div className="wrap">
         <div className="map-container">
-          {/* <MapContainer
+          <MapContainer
             center={{ lat: 59.329323, lng: 18.068581}}
-            zoom={10}
+            zoom={9}
             data={apartmentList}
             selectedItem={state.selectedItem}
-          /> */}
+          />
         </div>
       </div>
       <CityList items={apartmentList} onClick={showInfo.bind(this)} />

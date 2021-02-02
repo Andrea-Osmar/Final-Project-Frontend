@@ -30,7 +30,7 @@ export const Navbar = () => {
             </Link>
           </li>
           <li className='nav-item'>
-            <Link to='/getData' className='nav-links' onClick={closeMobileMenu}>
+            <Link to='/profile' className='nav-links' onClick={closeMobileMenu}>
             Min Sida
             </Link>
           </li>

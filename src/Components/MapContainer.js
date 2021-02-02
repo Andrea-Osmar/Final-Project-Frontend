@@ -40,7 +40,7 @@ export const MapContainer = (props) => {
             }}
           >
             <div>
-              <h2 className='info-window'>{props.selectedItem.Gatuadress}</h2>
+              <h4 className='info-window'>{props.selectedItem.Gatuadress}</h4>
             </div>
           </InfoWindow>
         </Map>

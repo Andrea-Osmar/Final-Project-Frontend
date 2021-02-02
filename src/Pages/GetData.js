@@ -4,30 +4,41 @@ import { getDataUrl, listUrl  } from '../Paths/api-paths'
 export const GetData = () => {
   const [getData, setGetData] = useState([])
   const [apartmentList, setApartmentList] = useState([])
+  const [savedApartmentList, setSavedApartmentList] = useState([])
   const tokenFromStorage = () => window.localStorage.getItem("tokenAuth") || ""
   const [token, setToken] = useState(tokenFromStorage)
 
   useEffect(() => {
     fetch(listUrl)
       .then((res) => res.json())
-      .then((json) => {
-        setApartmentList(json)
+      .then((objectJson) => {
+        setApartmentList(objectJson)
+        console.log("list", objectJson)
       })
+      .finally(() => {
+        fetch(getDataUrl, {
+          headers: {
+            Authorization: token,
+          },
+        })
+        .then((res) => res.json())
+        .then((stringJson) => {
+          setGetData(stringJson)
+          console.log("getdata", stringJson)
+        const result =  filterApartmentList()
+        setSavedApartmentList(result)
+        console.log("new", getData)
+        })
+      }) 
   }, [])
 
-  useEffect(() => {
-    fetch(getDataUrl, {
-      headers: {
-        Authorization: token,
-      },
-    })
-    .then((res) => res.json())
-    .then((json) => {
-      setGetData(json)
-      console.log(json)
-    })
-  }, [])
-
+  const filterApartmentList = () => {
+  return getData.map(dataItem => {
+    return apartmentList.find(apartmentItem => {
+      return Number(dataItem) === apartmentItem.id;
+    });
+  });  
+};
 
   return (
     <>

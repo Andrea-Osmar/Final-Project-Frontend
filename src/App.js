@@ -7,7 +7,7 @@ import { Navbar } from "./Components/Navbar"
 import { List } from "./Pages/List"
 
 import { GetData } from './Pages/GetData'
-import { SaveData } from './Components/SaveData'
+//import { SaveData } from './Components/SaveData'
 
 export const App = () => {
 
@@ -17,7 +17,7 @@ export const App = () => {
       <Navbar />
       <Switch>
         <Route path="/" exact>
-          <SaveData />
+          <List />
         </Route>
         <Route path="/users" exakt>
           <Users />
@@ -25,7 +25,7 @@ export const App = () => {
         <Route path="/signIn" exakt>
           <SignIn />
         </Route>
-        <Route path="/GetData" exakt>
+        <Route path="/profile" exakt>
           <GetData />
         </Route>
       </Switch>

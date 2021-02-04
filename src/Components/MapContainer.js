@@ -1,10 +1,26 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { Map, Marker, InfoWindow, GoogleApiWrapper } from "google-maps-react";
 
 export const MapContainer = (props) => {
 
   const google = window.google;
+
+  const [state, setState] = useState({    
+    showingInfoWindow: false,
+    activeMarker: {},
+    selectedItem: {},
+  })
+
+  const onMarkerClick = (props, marker, e) => {
+    console.log(props)
+    console.log("test")
+    setState({
+      selectedItem: props,
+      activeMarker: marker,
+      showingInfoWindow: true
+    })
+  }
 
   if (props.data === 0) {
     console.error("test 2")
@@ -21,29 +37,32 @@ export const MapContainer = (props) => {
           google={google}
           className={"map"}
           zoom={props.zoom}
-          initialCenter={props.center}
+          initialCenter={props.center}  
         >
-          {props.data.map(item => (
+          {props.data.map(item => (    
             <Marker
+              onClick={onMarkerClick.bind(this)}
               key={item.AnnonsId}
               title={item.Gatuadress}
               name={item.Stadsdel}
               position={{ lat: item.KoordinatLatitud, lng: item.KoordinatLongitud }}
+              props={item}
             />
+            
           ))}
 
-          <InfoWindow
-            visible={true}
-            position={{
-              lat: parseFloat(props.selectedItem.KoordinatLatitud),
-              lng: parseFloat(props.selectedItem.KoordinatLongitud)
-            }}
+        <InfoWindow
+            visible={state.showingInfoWindow}
+            position={state.selectedItem.position}
+            // position={{
+            //   lat: parseFloat(props.selectedItem.KoordinatLatitud),
+            //   lng: parseFloat(props.selectedItem.KoordinatLongitud)
+            // }}   
           >
             <div>
-              <h3>En Bostad</h3>
-              <h4 className='info-window'>{props.selectedItem.Gatuadress}</h4>
-              <h4 className='info-window'>{props.selectedItem.Stadsdel}</h4>
-              <h4 className='info-window'>{props.selectedItem.AntalRum}</h4>
+              <h3>{state.selectedItem.title}</h3>
+              <h4 className='info-window'>{state.selectedItem.Stadsdel}</h4>
+              {/* <h4 className='info-window'>{state.selectedItem.props.AntalRum}</h4> */}
             </div>
           </InfoWindow>
         </Map>

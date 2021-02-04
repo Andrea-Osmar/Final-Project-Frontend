@@ -144,7 +144,8 @@ ul {
   border: 2px solid #90a0ad;  
 } */
 
-.list-card {
+.list-card,
+.saved-card {
   display: flex;
   flex-direction: column;
   border: 2px #0000002b solid;
@@ -218,6 +219,9 @@ ul {
   margin: 0 10px;
   width: 30px;
 }
+.save-button:hover {
+  color: gold;
+}
 
 .save-button:active {
   color: gold;
@@ -257,67 +261,22 @@ ul {
   font-size: 12px;
 }
 
-/* MODAL */
-
-.modalBackground {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.4s ease-in-out;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  display: flex;
-}
-
-.modalShowing-true {
-  opacity: 1;
-  pointer-events: visible;
-}
-
-.modalInner {
-  background:#1e2939 ;
-  width: 500px;
-  max-width: calc(100% - 60px);
-  margin: auto;
-  display: flex;
-  flex-direction: row;
-  color: white;
-  text-align: left;
-  z-index: 99;
-  box-shadow: 5px 5px 10px rgba(0,0,0,0.5);;
-}
-
-.modalText {
-  padding: 15px;
-}
-
-.modalText {
-  display: block;
-  width: 100%;
-  text-align: center;
-}
-
-.modalImage img {
-  width: 100%;
-  object-fit: cover;
-  height: 100%;
-}
-
-.exitButton {
-  display: block;
-  width: 35px;
-  background-color: transparent;
-  border: 0;
-  color: white;
-  cursor: pointer;
-}
-
 /* SIGN IN FORM */
+
+.form {
+	margin-top: 70px;
+	margin-bottom: -61px;
+	height: 400px;
+	width: 290px;
+	padding: 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	background: rgb(44 43 43 / 80%);
+	box-shadow: 20px 20px 30px gray;
+	border-radius: 3%;
+}
 
 input {
   border-radius: 3px;
@@ -369,12 +328,13 @@ button {
 	font-size: 12px;
 }
 
-
 /* PROFILE */
 
-.saved-list {
-  color: red;
-}
+.saved-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+} 
 
 /* MEDIA QUERIES */
 
@@ -441,6 +401,7 @@ button {
   }
 }
 
+/* SCROLL */
 .MuiIconButton-root {
   color: black !important;
   z-index: 2 !important;;

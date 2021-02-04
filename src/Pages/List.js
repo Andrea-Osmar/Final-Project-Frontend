@@ -7,8 +7,8 @@ import MapContainer from '../Components/MapContainer'
 
 const CityList = (props) => {
   return (
-    <div className="list-wrapper">
-      <Scroll showBelow={1} />
+    <div id="city-list" className="list-wrapper">
+      <Scroll showBelow={250} />
         {props.items.map((item) => (
           <Card key={item.AnnonsId} data={item} onClick={e => props.onClick(e, item)}/>
         ))}
@@ -19,7 +19,7 @@ const CityList = (props) => {
 export const List = () => {
   const [apartmentList, setApartmentList] = useState([])
   const [state, setState] = useState({
-    selectedItem: { lat: 0, lng: 0 }
+    selectedItem: { lat: null, lng: null }
 
   })
 
@@ -37,7 +37,7 @@ export const List = () => {
 
   return (
   <>
-    <h1>Lägenheter i Stockholm</h1>
+    <h1>Lägenheter  i Stockholm</h1>
     <section className="list-container">
       <div className="wrap">
         <div className="map-container">

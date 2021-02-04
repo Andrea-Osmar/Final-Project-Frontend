@@ -13,7 +13,7 @@ export const GetData = () => {
       .then((res) => res.json())
       .then((listJson) => {
         setApartmentList(listJson);
-        console.log("list", listJson);
+        //console.log("list", listJson);
       })
       .finally(() => {
         fetch(getDataUrl, {
@@ -31,36 +31,43 @@ export const GetData = () => {
 
   useEffect(() => {
     const result = filterApartmentList(apartmentList, getData);
-      // console.log("result", result);
-      //   setSavedApartmentList(result);
-      //   console.log("new", result);
-      console.log(result)
-  }, [apartmentList, getData]);
+    setSavedApartmentList(result);
+  }, [apartmentList, getData])
 
-  const filterApartmentList = (apartments, data) => {
-    return apartments.map((apartmentItem) => {
-      return data.find((dataItem) => {
-        return Number(dataItem) === apartmentItem.AnnonsId;
+  const filterApartmentList = (listOfApartments, listOfIdsOfSavedApartments) => {
+    return listOfApartments.filter(singleApartment => {
+      return !!listOfIdsOfSavedApartments.find(singleId => {
+        return Number(singleId) === singleApartment.AnnonsId;
       });
-    });
+    });  
   };
 
   return (
-    <>
-      <div>
-        <h1>Dina sparade bostäder</h1>
-        {getData.map((item) => (
-          <div className="saved-list" key={item}>
-            <h3>{item}</h3>
-          </div>
-        ))}
-
-        {apartmentList.map((apartmentList) => (
-          <h3 key={apartmentList.AnnonsId}>
-            {apartmentList.AnnonsId}
-            {apartmentList.Stadsdel}
-          </h3>
-        ))}
+    <> 
+      <h1>Dina sparade bostäder</h1> 
+      <div className='saved-wrapper'>
+      {savedApartmentList.map((saved) => (
+        <div className='saved-card' key={saved.AnnonsId}>
+          <span><i className="far fa-times-circle"/></span>
+          <h4>{saved.Gatuadress}</h4>
+          <p>{saved.Stadsdel}</p>
+          <p>{saved.AntalRum} Rum</p>
+          <p>{saved.Yta} kvm</p>
+          <p>{saved.Hyra} :-/månad</p>
+          <a
+          
+          className="list-url"
+          href={`https://bostad.stockholm.se/${saved.Url}`}
+          target="_blank"
+          rel="noopener noreferrer"
+      >
+        Details
+        <span>
+          <i className="fas fa-angle-right"></i>
+        </span>
+      </a>
+        </div>
+      ))}
       </div>
     </>
   );

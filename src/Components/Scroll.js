@@ -5,29 +5,35 @@ import IconButton from '@material-ui/core/IconButton'
 export const Scroll = (showBelow) => {
 
   const [show, setShow] = useState(showBelow ? false : true)
+  const div = window.document.getElementById("city-list")   
   
   const handleScroll = () => {
-    if (window.pageYOffset > showBelow) {
-      if(!show) setShow(true)
+    console.log(div.scrollTop)
+    console.log(showBelow.showBelow)    
+
+    if (div.scrollTop > showBelow.showBelow) { 
+      //console.log(true)
+      if(!show) setShow(true)  
     } else {
       if (show) setShow(false)
     }
   }
 
   const handleClick = () => {
-    window[`scrollTo`]({ top: 0, behaviour: `smooth` })
+    div[`scrollTo`]({ top: 0, behaviour: `smooth` })
   }
 
   useEffect(() => {
     if (showBelow) {
-      window.addEventListener(`scroll`, handleScroll)
-      return () => window.removeEventListener(`scroll`, handleScroll)
+      const div = window.document.getElementById("city-list")  
+      div.addEventListener(`scroll`, handleScroll)
+      return () => div.removeEventListener(`scroll`, handleScroll)
     }
   })
 
   return (
     <div>
-      
+      {show && (
         <IconButton
           onClick={handleClick}
           aria-label="to top"
@@ -35,6 +41,7 @@ export const Scroll = (showBelow) => {
         >
           <ExpandLessIcon />
         </IconButton>
+        )}
     </div>
   )
 }

@@ -82,7 +82,6 @@ export const Users = () => {
   }
 
   const [modalState, setModalState] = useState(true)
-
   const toggleModalState = () => {
     setModalState(!modalState)
   }
@@ -112,11 +111,11 @@ export const Users = () => {
               {!token && (
                 <ToggleButton mode={mode} setModeinApp={handleChangeMode} />
               )}
-              {token && <SignOutButton signOut={handleSignOut} />}
+              {token && <SignOutButton signOut={handleSignOut} onClick={() => toggleModalState()} />}
             </div>
           </div>
         </div>
-        {token && <SignOutButton signOut={handleSignOut} />}
+        
         {token && <List token={token} />}
       </section>
     </>

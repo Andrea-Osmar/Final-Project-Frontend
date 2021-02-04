@@ -36,7 +36,7 @@ export const SignIn = ({ signIn, signInStatus }) => {
 					onChange={(event) => setPassword(event.target.value)}
 					value={password}
 				></input>
-				<button className="button" type="submit" >
+				<button className="button" type="submit">
 					Sign in
 				</button>
 				<output>

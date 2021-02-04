@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react'
 
 import { listUrl } from '../Paths/api-paths'
 import { Card } from '../Components/Card'
+import { Scroll } from '../Components/Scroll'
 import MapContainer from '../Components/MapContainer'
 
 const CityList = (props) => {
   return (
     <div className="list-wrapper">
+      <Scroll showBelow={1} />
         {props.items.map((item) => (
           <Card key={item.AnnonsId} data={item} onClick={e => props.onClick(e, item)}/>
         ))}
@@ -30,9 +32,7 @@ export const List = () => {
   }, [])
 
   const showInfo = (e, selectedItem) => {
-    console.log("test 1")
     setState({selectedItem: selectedItem});
-    console.log(state);
   }
 
   return (
@@ -43,7 +43,7 @@ export const List = () => {
         <div className="map-container">
           <MapContainer
             center={{ lat: 59.329323, lng: 18.068581}}
-            zoom={9}
+            zoom={10}
             data={apartmentList}
             selectedItem={state.selectedItem}
           />

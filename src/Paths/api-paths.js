@@ -1,6 +1,6 @@
-export const signUpUrl ="http://localhost:8080/users"
-export const signInUrl = "http://localhost:8080/sessions"
-//export const profileUrl = `http://localhost:8080/${userId}`
-export const listUrl = "http://localhost:8080/list"
-export const saveDataUrl = `http://localhost:8080/saveData`
-export const getDataUrl = "http://localhost:8080/getData"
+export const signUpUrl ="https://enbostad.herokuapp.com/users"
+export const signInUrl = "https://enbostad.herokuapp.com/sessions"
+export const listUrl = "https://enbostad.herokuapp.com/list"
+export const saveDataUrl = "https://enbostad.herokuapp.com/saveData"
+export const getDataUrl = "https://enbostad.herokuapp.com/getData"
+//export const profileUrl = `https://enbostad.herokuapp.com/${userId}`

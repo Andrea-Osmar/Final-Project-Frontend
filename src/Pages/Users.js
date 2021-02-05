@@ -83,8 +83,7 @@ export const Users = () => {
 
   return (
     <>
-      <section>
-        <div className='form-container'></div>
+      <section className='form-container'>
         {!token && mode === "signIn" && (
 				<SignIn signInStatus={signInOk} signIn={signInUser} />
 			)}
@@ -93,8 +92,8 @@ export const Users = () => {
 			)}
 			{!token && <ToggleButton mode={mode} setModeinApp={handleChangeMode} />}
 			{token && <SignOutButton signOut={handleSignOut} />}
-			{token && <List token={token} />}
       </section>
+			{token && <List token={token} />}
     </>
   )
 }

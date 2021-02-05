@@ -10,7 +10,7 @@ export const SignOutButton = ({ signOut }) => {
 			className="button-sign-out"
 			type="button"
 		>
-			Sign Out
+			Logga ut
 		</button>
 	)
 }

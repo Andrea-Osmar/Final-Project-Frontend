@@ -4,16 +4,14 @@ import { saveDataUrl } from '../Paths/api-paths'
 
 export const Card = (props) => {
   const data = props.data
-
   const tokenFromStorage = () => window.localStorage.getItem("tokenAuth") || ""
-
   const [token] = useState(tokenFromStorage)
 
   const fetchSavedData = () => {
     const idData = {
       annonsId: String(data.AnnonsId)
     }
-    console.log(JSON.stringify(idData))
+    //console.log(JSON.stringify(idData))
 
     fetch(saveDataUrl, {
       method: "POST",
@@ -25,7 +23,7 @@ export const Card = (props) => {
   })
   .then((res) => res.json())
   .then((getJson) => {
-    console.log(getJson);
+    //console.log(getJson);
   });
 };
 

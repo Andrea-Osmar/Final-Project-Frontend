@@ -6,9 +6,8 @@ import { Users } from "./Pages/Users"
 import { Navbar } from "./Components/Navbar"
 import { List } from "./Pages/List"
 
-import { GetData } from './Pages/GetData'
-//import { SaveData } from './Components/SaveData'
-
+import { Profile } from './Pages/Profile'
+import { StartPage } from './Pages/StartPage'
 export const App = () => {
 
   return (
@@ -17,6 +16,9 @@ export const App = () => {
       <Navbar />
       <Switch>
         <Route path="/" exact>
+          <StartPage />
+        </Route>
+        <Route path="/home" exact>
           <List />
         </Route>
         <Route path="/users" exakt>
@@ -26,7 +28,7 @@ export const App = () => {
           <SignIn />
         </Route>
         <Route path="/profile" exakt>
-          <GetData />
+          <Profile />
         </Route>
       </Switch>
     </BrowserRouter>
@@ -35,12 +37,12 @@ export const App = () => {
 }
 
 
-//TODO: 
+//TODO:
 // Import Google Map - Connect to list
 // Fix Personal Page
 // Fix sign in component - DONE
 // Create save function for list
 // Create Search function for list
-// Fix Navbar 
+// Fix Navbar
 // Add Loader
 // Add page not found

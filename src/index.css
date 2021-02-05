@@ -16,7 +16,7 @@ body {
 }
 
 main {
-  height: 100vh;
+  max-height: 100vh;
 }
 
 h1 {
@@ -38,12 +38,17 @@ h3 {
 
 h4 {
   color: #000;
+  text-align: center;
 }
 
 p {
   margin: 2px;
   font-size: 13px;
 }
+
+/* a {
+  text-decoration: none;
+} */
 
 /* NAVBAR */
 
@@ -115,12 +120,46 @@ ul {
   padding: 0;
 }
 
+/* START PAGE */
+
+.start-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 60px
+  }
+
+.start-image {
+  background-image: url("https://images.unsplash.com/photo-1516156008625-3a9d6067fab5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80");
+  background-size: cover;
+  width: 300px;
+}
+
+.start-button {
+  font-size: 16px;
+  padding: 10px;
+  margin: 10px;
+  text-decoration: none;
+  background-color: white;
+  height: 40px;
+}
+
+.start-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border: 2px solid black;
+  width: 300px;
+  height: 500px;
+  padding: 30px;
+  letter-spacing: 1px;
+}
+
 /* LIST */
 
 .list-container {
   display: flex;
   flex-direction: row-reverse;
-  height: 90vh;
+  height: 100vh;
 }
 
 .list-wrapper {
@@ -133,19 +172,8 @@ ul {
 .list-wrapper::-webkit-scrollbar {
   display: none;
 }
-/*
-.list-wrapper::-webkit-scrollbar-track {
-  background: transparent;
-  border: 1px solid #90a0ad;   
-}
 
-.list-wrapper::-webkit-scrollbar-thumb {
-  background-color: transparent;   
-  border: 2px solid #90a0ad;  
-} */
-
-.list-card,
-.saved-card {
+.list-card {
   display: flex;
   flex-direction: column;
   border: 2px #0000002b solid;
@@ -156,23 +184,15 @@ ul {
   background-color: white;
   box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
   font-family: 'Lato', sans-serif;
-  /* transition: 0.2s all; 
 }
 
-.list-card:hover {
-  /* transform: scale(1.02, 1.02); */
+.list-card:hover,
+.saved-card:hover {
   box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
-    transform: translateY(2px);
-    -webkit-animation: gradientBG 1.5s ease-in-out forwards;
-    animation: gradientBG 1.5s ease-in-out forwards;
+  transform: translateY(2px);
+  -webkit-animation: gradientBG 1.5s ease-in-out forwards;
+  animation: gradientBG 1.5s ease-in-out forwards;
 }
-
-/* .list-card:hover .list-details {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: flex-end;
-} */
 
 .list-card:hover .list-arrow {
   display: none;
@@ -227,6 +247,30 @@ ul {
   color: gold;
 }
 
+.saved-delete {
+  border: none;
+  background: none;
+  width: 20px;
+  font-size: 17px;
+  color: tomato;
+}
+
+/* SCROLL  TO TOP */
+
+.MuiIconButton-root {
+  color: black !important;
+  z-index: 2 !important;;
+  position: fixed !important;;
+  bottom: 2vh !important;
+  background-color: #8e9eabad !important;
+  left: 12px !important;
+}  
+
+.MuiIconButton-root:hover {
+  border: 2px solid #7c7c7c !important;
+  background-color: transparent !important;
+}
+
 /* MAP */
 
 .house-marker {
@@ -240,7 +284,7 @@ ul {
   height: 25px;
 }
 
-.cluster-marker {
+/* .cluster-marker {
   color: #fff;
   background: #1978c8;
   border-radius: 50%;
@@ -248,7 +292,7 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .wrap {
   position: sticky;
@@ -263,19 +307,36 @@ ul {
 
 /* SIGN IN FORM */
 
+/* .form-section {
+  display: flex;
+  justify-content: center;
+} */
+
 .form {
-	margin-top: 70px;
-	margin-bottom: -61px;
+  margin-top: 90px;
+  margin-bottom: -32px;
 	height: 400px;
-	width: 290px;
+	width: 350px;
 	padding: 30px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
 	align-items: center;
-	background: rgb(44 43 43 / 80%);
+	background: #8e9eab73;
 	box-shadow: 20px 20px 30px gray;
-	border-radius: 3%;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* INPUT FIELDS */
+.input {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
 }
 
 input {
@@ -292,22 +353,32 @@ input::placeholder {
 	font-family: 'Lato', sans-serif;
 }
 
-button {
-  font-size: 14px;
+/* BUTTON */
+.button-container {
+	display: flex;
+	justify-content: center;
+}
+
+.button,
+.button-sign-out {
+  font-size: 16px;
   text-align: center;
   padding: 5px;
   margin-top: 5px;
   border-radius: 5px;
   color: #fff;
-  background: transparent;
+  background: #000000;
+  width: 88%;
+  height: 40px;
 }
 
 .button:hover,
 .button-toggle:hover,
 .button-sign-out:hover
-.button:hover {
+.button:hover
+.start-button {
 	cursor: pointer;
-	background-color: #182624;
+	background-color: #8e9eab;
 }
 
 .button-toggle {
@@ -315,7 +386,7 @@ button {
 	align-self: center;
 	color: #ffffff;
 	padding: 4px;
-	font-size: 14px;
+	font-size: 16px;
 	text-decoration: underline;
 	background-color: transparent;
 	border: none;
@@ -330,16 +401,67 @@ button {
 
 /* PROFILE */
 
+.profile-container {
+  background-image: url("https://images.unsplash.com/photo-1516156008625-3a9d6067fab5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80");
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+}
+
 .saved-wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 } 
 
+.saved-card {
+  display: flex;
+  flex-direction: column;
+  border: 2px #0000002b solid;
+  background-color: whitesmoke;
+  width: 280px;
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+  font-family: 'Lato', sans-serif;
+}
+
+.saved-card-details {
+  text-align: right;
+  font-size: 14px;
+}
+
+
 /* MEDIA QUERIES */
 
-@media screen and (max-width: 960px) {
+@media (max-width: 375px) {
 
+.list-container {
+  flex-direction: column;
+}
+
+.map-container {
+  height: 350px;
+}
+
+.wrap {
+  margin: 0 0 10px 40px;
+}
+} 
+
+.list-wrapper {
+  max-width: 375px;
+}
+
+@media (max-width: 960px) {
+
+  h1 {
+    font-size: 25px;
+  }
+  
   .nav-menu {
     display: flex;
     flex-direction: column;
@@ -382,7 +504,7 @@ button {
   }
 
   .nav-item {
-    height: 80px; /**/
+    height: 80px;
   }
 
   .menu-icon {
@@ -395,17 +517,26 @@ button {
     cursor: pointer;
   }
 
+  /* .list-container {
+    flex-direction: column;
+  } */
+
+  
+
+  /* .wrap {
+    width: 85%
+  } */
+
+  /* .map-container {
+    height: 315px;
+  }  */
+
   .fa-times {
     color: #fff;
     font-size: 2rem;
   }
-}
 
-/* SCROLL */
-.MuiIconButton-root {
-  color: black !important;
-  z-index: 2 !important;;
-  position: fixed !important;;
-  bottom: 2vh !important;
-  border: 2px solid tomato !important;
-}  
+  .form {
+  width: 300px
+  }
+}

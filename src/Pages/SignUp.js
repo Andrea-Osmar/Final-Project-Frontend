@@ -32,8 +32,7 @@ export const SignUp = ({ signUp, signUpStatus }) => {
 	}
 
 	return (
-		<section>
-			<div className='form-container'>
+		<section className='form-container'>
 			<form onSubmit={(event) => handleRegistration(event)} className="form">
 				<h2>Sign up here</h2>
 				<input
@@ -92,7 +91,6 @@ export const SignUp = ({ signUp, signUpStatus }) => {
 					Sign Up
 				</button>
 			</form>
-			</div>
 		</section>
 	)
 }

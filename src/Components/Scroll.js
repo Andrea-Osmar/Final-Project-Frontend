@@ -8,8 +8,8 @@ export const Scroll = (showBelow) => {
   const div = window.document.getElementById("city-list")   
   
   const handleScroll = () => {
-    console.log(div.scrollTop)
-    console.log(showBelow.showBelow)    
+    //console.log(div.scrollTop)
+    //console.log(showBelow.showBelow)    
 
     if (div.scrollTop > showBelow.showBelow) { 
       //console.log(true)

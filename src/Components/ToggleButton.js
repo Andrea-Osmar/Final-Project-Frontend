@@ -12,6 +12,7 @@ export const ToggleButton = ({ mode, setModeinApp }) => {
 	}
 
 	return (
+		<div className='button-toggle-wrapper'>
 		<button
 			onClick={() => handleClick()}
 			type="button"
@@ -19,5 +20,6 @@ export const ToggleButton = ({ mode, setModeinApp }) => {
 		>
 			{mode === "signUp" ? "Sign in" : "Sign up"}
 		</button>
+		</div>
 	)
 }

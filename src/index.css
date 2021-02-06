@@ -46,9 +46,6 @@ p {
   font-size: 13px;
 }
 
-/* a {
-  text-decoration: none;
-} */
 
 /* NAVBAR */
 
@@ -122,25 +119,31 @@ ul {
 
 /* START PAGE */
 
-.start-wrapper {
+.start-container {
+  background-image: url("https://source.unsplash.com/1600x900/?apartment,house?orientation=landscape");
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 90vh;
+  background-size: cover;
   display: flex;
   justify-content: center;
-  margin: 60px
-  }
-
-.start-image {
-  background-image: url("https://images.unsplash.com/photo-1516156008625-3a9d6067fab5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80");
-  background-size: cover;
-  width: 300px;
+  align-items: center;
 }
 
 .start-button {
-  font-size: 16px;
-  padding: 10px;
+  padding: 5px;
   margin: 10px;
   text-decoration: none;
   background-color: white;
   height: 40px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.start-button-link {
+  text-decoration: none;
+  color: black;
+  font-family: 'Playball', cursive;
+  font-size: 20px;
 }
 
 .start-text {
@@ -151,9 +154,16 @@ ul {
   width: 300px;
   height: 500px;
   padding: 30px;
-  letter-spacing: 1px;
+  line-height: 24px;
+  background-color: #fffffff2;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
+.start-logo {
+  color: black;
+  font-size: 35px;
+  font-family: 'Playball', cursive;
+}
 /* LIST */
 
 .list-container {
@@ -284,16 +294,6 @@ ul {
   height: 25px;
 }
 
-/* .cluster-marker {
-  color: #fff;
-  background: #1978c8;
-  border-radius: 50%;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-
 .wrap {
   position: sticky;
   height: 80%;
@@ -405,17 +405,23 @@ input::placeholder {
   background-image: url("https://images.unsplash.com/photo-1516156008625-3a9d6067fab5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80");
   background-repeat: no-repeat;
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   background-size: cover;
   display: flex;
   flex-direction: column;
 }
-
 .saved-wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 } 
+
+.saved-wrapper::-webkit-scrollbar {
+  display: none;
+}
 
 .saved-card {
   display: flex;

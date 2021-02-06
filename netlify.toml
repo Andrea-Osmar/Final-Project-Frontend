@@ -1,4 +1,5 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> e6059f6c14e69439aa222d6b5dac41d9b8c2d870
+[build]
+  base = "/"
+  publish = "build/"
+  command = "npm run build"
+  environment = { REACT_APP_GOOGLE_KEY = "Google Maps API KEY" }

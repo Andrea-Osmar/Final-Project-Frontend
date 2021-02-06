@@ -7,7 +7,7 @@ export const StartPage = () => {
         <div className='start-text'>
           <h3 className="start-logo">En Bostad</h3>
           Sidan där du hittar lediga hyreslägenheter i Stockholm.<br/> 
-          En Bostad är platsen där alla kan hitta hem. <br/>
+          En Bostad är platsen där alla kan hitta hem.
           Vare sig du letar efter din första lägenhet eller 
           ett hem till din stora familj. 
           <button className="start-button">

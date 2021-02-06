@@ -16,16 +16,16 @@ export const Card = (props) => {
     fetch(saveDataUrl, {
       method: "POST",
       headers: {
-        "Content-type": "application/json; charset=UTF-8",
+        "Content-type": "application/json charset=UTF-8",
         Authorization: token,
       }, 
       body: JSON.stringify(idData) 
   })
   .then((res) => res.json())
   .then((getJson) => {
-    //console.log(getJson);
-  });
-};
+    //console.log(getJson)
+  })
+}
 
   return (
     <div className="list-card">

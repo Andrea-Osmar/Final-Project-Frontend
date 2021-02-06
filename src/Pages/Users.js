@@ -2,8 +2,6 @@ import React, { useState } from "react"
 
 import { SignUp } from "./SignUp"
 import { SignIn } from "./SignIn"
-import { List } from "./List"
-
 import { signUpUrl, signInUrl } from "../Paths/api-paths"
 import { ToggleButton } from "../Components/ToggleButton"
 import { SignOutButton } from "../Components/SignOutButton"
@@ -92,9 +90,7 @@ export const Users = () => {
 			)}
 			{!token && <ToggleButton mode={mode} setModeinApp={handleChangeMode} />}
       {token && <SignOutButton signOut={handleSignOut} />}
-			{token && <List token={token} />}
       </section>
-      
     </>
   )
 }

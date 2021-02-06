@@ -65,7 +65,7 @@ export const Profile = () => {
           <p>{saved.Stadsdel}</p>
           <p>{saved.AntalRum} Rum</p>
           <p>{saved.Yta} kvm</p>
-          <p className='saved-card-details'>{saved.Hyra} :-/månad</p>
+          <p className='saved-card-details'>{saved.Hyra} SEK</p>
           <a
           className="list-url"
           href={`https://bostad.stockholm.se/${saved.Url}`}

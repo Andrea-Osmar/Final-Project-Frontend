@@ -19,19 +19,14 @@ export const Navbar = () => {
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
           </div>
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-          <li className='nav-item'>
-            <Link to='/home' className='nav-links' onClick={closeMobileMenu}>
-              Hem
-            </Link>
-          </li>
-          <li className='nav-item'>
+            <li className='nav-item'>
             <Link to='/' className='nav-links' onClick={closeMobileMenu}>
               Startsida
             </Link>
           </li>
           <li className='nav-item'>
-            <Link to='/users' className='nav-links' onClick={closeMobileMenu}>
-              Logga In/Ut
+            <Link to='/home' className='nav-links' onClick={closeMobileMenu}>
+              Hem
             </Link>
           </li>
           {token && 
@@ -41,6 +36,11 @@ export const Navbar = () => {
             </Link>
           </li>
           }
+          <li className='nav-item'>
+            <Link to='/users' className='nav-links' onClick={closeMobileMenu}>
+              Logga In/Ut
+            </Link>
+          </li>
           </ul>
         </div>
       </nav>

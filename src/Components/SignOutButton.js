@@ -4,7 +4,11 @@ export const SignOutButton = ({ signOut }) => {
 	const handleSignOut = () => {
 		signOut("")
 	}
+
 	return (
+		<div className='signOut-text'>
+			<h3 className='start-logo'>Tack för besöket</h3>
+			<p>Din drömbostad väntar på dig...</p>
 		<button
 			onClick={() => handleSignOut()}
 			className="button-sign-out"
@@ -12,5 +16,6 @@ export const SignOutButton = ({ signOut }) => {
 		>
 			Logga ut
 		</button>
+		</div>
 	)
 }

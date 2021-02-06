@@ -157,7 +157,7 @@ ul {
   height: 500px;
   padding: 30px;
   line-height: 24px;
-  background-color: #fffffff2;
+  background-color: #e1dcdcf0;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
@@ -264,7 +264,13 @@ ul {
   background: none;
   width: 20px;
   font-size: 17px;
-  color: tomato;
+  color: #92a1ae;
+}
+
+.saved-delete:hover {
+  color: red;
+  transition: all 0.2s ease-out;
+  transform: scale(1.1);
 }
 
 /* SCROLL  TO TOP */
@@ -338,8 +344,6 @@ ul {
   width: 100vw;
   height: 90vh;
   background-size: cover;
-  display: flex;
-  flex-direction: column;
 }
 
 /* INPUT FIELDS */
@@ -382,9 +386,8 @@ input::placeholder {
   height: 40px;
 }
 
-.button:hover
-.button-sign-out:hover
-.button:hover
+.button-sign-out:hover,
+.button:hover,
 .start-button {
 	cursor: pointer;
 	background-color: #8e9eab;
@@ -438,7 +441,7 @@ input::placeholder {
   border: 2px #0000002b solid;
   background-color: whitesmoke;
   width: 215px;
-  margin: 10px;
+  margin: 13px;
   padding: 10px;
   box-shadow: 0 20px 50px rgba(0,0,0,0.8);
   font-family: 'Lato', sans-serif;
@@ -447,6 +450,21 @@ input::placeholder {
 .saved-card-details {
   text-align: right;
   font-size: 14px;
+}
+
+/* SIGN OUT */
+
+.signOut-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border: 2px solid black;
+  width: 300px;
+  height: 320px;
+  padding: 30px;
+  margin-top: 50px;
+  line-height: 24px;
+  background-color: #e1dcdcf0;
 }
 
 /* LOADER */
@@ -553,20 +571,6 @@ input::placeholder {
     font-size: 1.8rem;
     cursor: pointer;
   }
-
-  /* .list-container {
-    flex-direction: column;
-  } */
-
-  
-
-  /* .wrap {
-    width: 85%
-  } */
-
-  /* .map-container {
-    height: 315px;
-  }  */
 
   .fa-times {
     color: #fff;

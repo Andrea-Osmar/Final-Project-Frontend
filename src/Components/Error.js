@@ -14,14 +14,14 @@ export const Error = () => {
       <img
         className="error-image"
         src="https://media1.giphy.com/media/3o6MbkBbeZx4QLOs4U/source.gif"
-        alt="angry birds eating popcorn"
+        alt="house gif"
       />
-      <Button
+      <button
         type="button"
         text="Go Back"
         onClick={handleGoBack}
         className="error-button"
-      />
+      ></button>
     </section>
   )
 }

@@ -1,5 +1,5 @@
 [build]
-  base = "code/"
+  base = "/"
   publish = "build/"
   command = "npm run build"
-  environment = { REACT_APP_GOOGLE_KEY='AIzaSyDTfrfS2EfM29dyLwdOt6iVezwQOHOVlvM' }
+  environment = { REACT_APP_GOOGLE_KEY = "api key" }

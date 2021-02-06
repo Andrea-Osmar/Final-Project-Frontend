@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react"
 import { getDataUrl, listUrl } from "../Paths/api-paths"
+import Loader from "../Components/Loader";
 
 export const Profile = () => {
+  const [loading, setLoading] = useState(true);
   const [getData, setGetData] = useState([])
   const [apartmentList, setApartmentList] = useState([])
   const [savedApartmentList, setSavedApartmentList] = useState([])
@@ -24,7 +26,7 @@ export const Profile = () => {
           .then((res) => res.json())
           .then((getJson) => {
             setGetData(getJson)
-            
+            setLoading(false)
           })
       })
       // eslint-disable-next-line
@@ -44,7 +46,8 @@ export const Profile = () => {
   }
 
   return (
-    <> 
+    <> {loading && <Loader />}
+      {!loading && (
     <section className='profile-container'>
       <h1>Dina sparade bostäder</h1> 
       <div className='saved-wrapper'>
@@ -73,6 +76,7 @@ export const Profile = () => {
       ))}
       </div>
       </section>
+      )}
     </>
   )
 }

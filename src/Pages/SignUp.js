@@ -32,7 +32,7 @@ export const SignUp = ({ signUp, signUpStatus }) => {
 	}
 
 	return (
-		<section className='form-container'>
+		<section>
 			<form onSubmit={(event) => handleRegistration(event)} className="form">
 				<h2>Sign up here</h2>
 				<input

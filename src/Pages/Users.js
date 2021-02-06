@@ -91,9 +91,10 @@ export const Users = () => {
 				<SignUp signUpStatus={signUpOk} signUp={signUpUser} />
 			)}
 			{!token && <ToggleButton mode={mode} setModeinApp={handleChangeMode} />}
-			{token && <SignOutButton signOut={handleSignOut} />}
-      </section>
+      {token && <SignOutButton signOut={handleSignOut} />}
 			{token && <List token={token} />}
+      </section>
+      
     </>
   )
 }

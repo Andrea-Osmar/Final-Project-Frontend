@@ -23,6 +23,7 @@ h1 {
   text-align: center;
   color: #fff;
   margin: 20px;
+  text-shadow: 2px 3px #000000;
 }
 
 h2 {
@@ -133,10 +134,11 @@ ul {
 .start-button {
   padding: 5px;
   margin: 10px;
+  border-radius: 5px;
   text-decoration: none;
   background-color: white;
   height: 40px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: 0 20px 20px 0 #777171;
 }
 
 .start-button-link {
@@ -322,14 +324,22 @@ ul {
 	flex-direction: column;
 	justify-content: space-evenly;
 	align-items: center;
-	background: #8e9eab73;
+	background: #8e9eabd4;
 	box-shadow: 20px 20px 30px gray;
+  border-radius: 4px;
 }
 
 .form-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-image: url("https://source.unsplash.com/1600x900/?apartment,house?orientation=landscape");
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 90vh;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
 }
 
 /* INPUT FIELDS */
@@ -372,8 +382,7 @@ input::placeholder {
   height: 40px;
 }
 
-.button:hover,
-.button-toggle:hover,
+.button:hover
 .button-sign-out:hover
 .button:hover
 .start-button {
@@ -428,7 +437,7 @@ input::placeholder {
   flex-direction: column;
   border: 2px #0000002b solid;
   background-color: whitesmoke;
-  width: 280px;
+  width: 215px;
   margin: 10px;
   padding: 10px;
   box-shadow: 0 20px 50px rgba(0,0,0,0.8);
@@ -440,6 +449,27 @@ input::placeholder {
   font-size: 14px;
 }
 
+/* LOADER */
+
+.loader {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.rotate {
+  width: 300px;
+  animation: rotation 8s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
 
 /* MEDIA QUERIES */
 
@@ -486,6 +516,7 @@ input::placeholder {
     opacity: 1;
     transition: all 0.5s ease;
     z-index: 1;
+    top: 74px;
   }
 
   .nav-links {

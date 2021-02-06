@@ -8,6 +8,7 @@ import { List } from "./Pages/List"
 
 import { Profile } from './Pages/Profile'
 import { StartPage } from './Pages/StartPage'
+
 export const App = () => {
 
   return (

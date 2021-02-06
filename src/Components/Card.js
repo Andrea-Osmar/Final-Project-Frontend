@@ -31,9 +31,11 @@ export const Card = (props) => {
     <div className="list-card">
       <h3>
         {data.Gatuadress}
-        <button className="save-button" onClick={() => fetchSavedData()}>
+        {token &&
+        <button className="save-button" token={token} onClick={() => fetchSavedData()}>
           <i className="far fa-bookmark"></i>
         </button>
+        }
       </h3>
       <button className="list-location">
         <img
@@ -44,7 +46,7 @@ export const Card = (props) => {
         />
       </button>
       <div className="list-details">
-        <p>{data.Stadsdel}</p>{" "}
+        <p>{data.Stadsdel}</p>
         <span>
           <i className="fas fa-circle"></i>
         </span>
@@ -52,7 +54,7 @@ export const Card = (props) => {
         <span>
           <i className="fas fa-circle"></i>
         </span>
-        <p>{data.Yta} kvm</p>{" "}
+        <p>{data.Yta} kvm</p>
         <span>
           <i className="fas fa-circle"></i>
         </span>

@@ -15,15 +15,16 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
-main {
+/* main {
   max-height: 100vh;
-}
+} */
 
 h1 {
   text-align: center;
   color: #fff;
   margin: 20px;
   text-shadow: 2px 3px #000000;
+  font-size: 36px;
 }
 
 h2 {
@@ -42,6 +43,9 @@ h4 {
   text-align: center;
 }
 
+h5 {
+  margin: 10px 0;
+}
 p {
   margin: 2px;
   font-size: 13px;
@@ -216,6 +220,10 @@ ul {
   margin: 0 5px; 
 }
 
+.fa-angle-right {
+  margin-left: 5px;
+}
+
 .list-details {
   display: flex;
   flex-wrap: wrap;
@@ -368,12 +376,14 @@ input::placeholder {
 }
 
 /* BUTTON */
+
 .button-container {
 	display: flex;
 	justify-content: center;
 }
 
 .button,
+.error-button,
 .button-sign-out {
   font-size: 16px;
   text-align: center;
@@ -387,6 +397,7 @@ input::placeholder {
 }
 
 .button-sign-out:hover,
+.error-button:hover,
 .button:hover,
 .start-button {
 	cursor: pointer;
@@ -467,6 +478,40 @@ input::placeholder {
   background-color: #e1dcdcf0;
 }
 
+/* FOOTER */
+
+.footer-wrapper {
+  background: linear-gradient( 
+  90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+  color:#fff;
+  height: 110px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: baseline;
+  font-size: 1.2rem;
+  position: sticky;
+  z-index: 999;
+  border-top: 1px solid #2d2d2d;
+}
+
+.footer h5 {
+  margin-bottom: 10px;
+}
+.footer-section {
+  width: 220px;
+  margin-right: 10px;
+}
+
+.footer-info:hover,
+.footer-icons {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.footer-icons {
+  margin-right: 13px;
+}
+
 /* LOADER */
 
 .loader {
@@ -478,6 +523,23 @@ input::placeholder {
 .rotate {
   width: 300px;
   animation: rotation 8s infinite linear;
+}
+
+/* ERROR PAGE */
+
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.error-image {
+  width: 500px;
+}
+
+.error-button {
+  width: 200px;
+  margin-top: 25px;
 }
 
 @keyframes rotation {
@@ -506,8 +568,12 @@ input::placeholder {
 }
 } 
 
+
 .list-wrapper {
-  max-width: 375px;
+  /* max-width: 390px;
+  display: flex;
+  flex-direction: column;
+  align-self: center; */
 }
 
 @media (max-width: 960px) {

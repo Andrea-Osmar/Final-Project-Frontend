@@ -7,20 +7,23 @@ import MapContainer from '../Components/MapContainer'
 
 const CityList = (props) => {
   return (
-    <div id="city-list" className="list-wrapper">
+    <div id='city-list' className='list-wrapper'>
       <Scroll showBelow={250} />
-        {props.items.map((item) => (
-          <Card key={item.AnnonsId} data={item} onClick={e => props.onClick(e, item)}/>
-        ))}
-      </div>
+      {props.items.map((item) => (
+        <Card
+          key={item.AnnonsId}
+          data={item}
+          onClick={(e) => props.onClick(e, item)}
+        />
+      ))}
+    </div>
   )
 }
 
 export const List = () => {
   const [apartmentList, setApartmentList] = useState([])
   const [state, setState] = useState({
-    selectedItem: { lat: null, lng: null }
-
+    selectedItem: { lat: null, lng: null },
   })
 
   useEffect(() => {
@@ -32,25 +35,25 @@ export const List = () => {
   }, [])
 
   const showInfo = (e, selectedItem) => {
-    setState({selectedItem: selectedItem});
+    setState({ selectedItem: selectedItem })
   }
 
   return (
-  <>
-    <h1>Lägenheter  i Stockholm</h1>
-    <section className="list-container">
-      <div className="wrap">
-        <div className="map-container">
-          <MapContainer
-            center={{ lat: 59.329323, lng: 18.068581}}
-            zoom={10}
-            data={apartmentList}
-            selectedItem={state.selectedItem}
-          />
+    <>
+      <h1>Lägenheter i Stockholm</h1>
+      <section className='list-container'>
+        <div className='wrap'>
+          <div className='map-container'>
+            <MapContainer
+              center={{ lat: 59.329323, lng: 18.068581 }}
+              zoom={10}
+              data={apartmentList}
+              selectedItem={state.selectedItem}
+            />
+          </div>
         </div>
-      </div>
-      <CityList items={apartmentList} onClick={showInfo.bind(this)} />
-    </section>
-  </>
+        <CityList items={apartmentList} onClick={showInfo.bind(this)} />
+      </section>
+    </>
   )
 }

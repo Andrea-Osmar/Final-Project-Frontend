@@ -44,7 +44,7 @@ export const Card = (props) => {
       <button className='list-location'>
         <img
           className='house-logo'
-          src='/pin.png'
+          src='/houses.png'
           alt='pin'
           onClick={props.onClick}
         />
@@ -58,14 +58,14 @@ export const Card = (props) => {
         <span>
           <i className='fas fa-circle'></i>
         </span>
-        <p>{data.Yta} kvm</p>
-        <span>
+        {data.Yta && <p>{data.Yta} kvm</p>}
+        {data.Yta && <span>
           <i className='fas fa-circle'></i>
-        </span>
-        <p>{data.Hyra} :-/månad</p>
-        <span>
+        </span>}
+        {data.Hyra && <p>{data.Hyra} SEK</p>}
+        {data.Hyra && <span>
           <i className='fas fa-circle'></i>
-        </span>
+        </span>}
         <a
           className='list-url'
           key={data.AnnonsId}

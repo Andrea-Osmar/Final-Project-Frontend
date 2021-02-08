@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export const Footer = () => {
   return (
@@ -6,6 +7,11 @@ export const Footer = () => {
       <div className='footer-section'>
         <h5>Om Oss</h5>
         <p>Detta är ett projekt skapat för Technigo Bootcamp.</p>
+        <button className='footer-button'>
+          <Link to='/info' className='footer-button-link'>
+            Mer information
+          </Link>
+        </button>
       </div>
       <div className='footer-section'>
         <h5>Kontakta Oss</h5>

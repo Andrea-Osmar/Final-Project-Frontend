@@ -8,6 +8,7 @@ import { List } from './Pages/List'
 import { Profile } from './Pages/Profile'
 import { StartPage } from './Pages/StartPage'
 import { Error } from './Components/Error'
+import { Info } from './Pages/Info'
 
 export const App = () => {
   return (
@@ -32,6 +33,9 @@ export const App = () => {
           </Route>
           <Route path='/error' exakt>
             <Error />
+          </Route>
+          <Route path='/info' exakt>
+            <Info />
           </Route>
         </Switch>
       </BrowserRouter>

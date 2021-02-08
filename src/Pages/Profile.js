@@ -55,8 +55,6 @@ export const Profile = () => {
     return <Error />
   }
 
-  const handleDelete = () => {}
-
   return (
     <>
       {loading && <Loader />}
@@ -66,8 +64,7 @@ export const Profile = () => {
           <div className="saved-wrapper">
             {savedApartmentList.map((saved) => (
               <div className="saved-card" key={saved.AnnonsId}>
-                <button className="saved-delete" onClick={() => handleDelete()}>
-                  {console.log(handleDelete)}
+                <button className="saved-delete">
                   <span>
                     <i className="far fa-times-circle" />
                   </span>
@@ -75,8 +72,8 @@ export const Profile = () => {
                 <h4>{saved.Gatuadress}</h4>
                 <p>{saved.Stadsdel}</p>
                 <p>{saved.AntalRum} Rum</p>
-                <p>{saved.Yta} kvm</p>
-                <p className="saved-card-details">{saved.Hyra} SEK</p>
+                {saved.Yta && <p>{saved.Yta} kvm</p>}
+                {saved.Hyra && <p className="saved-card-details">{saved.Hyra} SEK</p>}
                 <a
                   className="list-url"
                   href={`https://bostad.stockholm.se/${saved.Url}`}

@@ -41,6 +41,7 @@ export const MapContainer = (props) => {
             key={item.AnnonsId}
             title={item.Gatuadress}
             name={item.Stadsdel}
+            room={item.AntalRum}
             position={{
               lat: item.KoordinatLatitud,
               lng: item.KoordinatLongitud,
@@ -59,8 +60,8 @@ export const MapContainer = (props) => {
         >
           <div>
             <h3>{state.selectedItem.title}</h3>
-            <h4 className='info-window'>{state.selectedItem.Stadsdel}</h4>
-            {/* <h4 className='info-window'>{state.selectedItem.props.AntalRum}</h4> */}
+            <h4>{state.selectedItem.name}</h4>
+            <h4>{state.selectedItem.room} Rum</h4>
           </div>
         </InfoWindow>
       </Map>
@@ -73,3 +74,11 @@ export default GoogleApiWrapper({
   apiKey: process.env.REACT_APP_GOOGLE_KEY,
   LoadingContainer: LoadingContainer,
 })(MapContainer)
+
+/*
+
+export default GoogleApiWrapper({
+  apiKey: process.env.REACT_APP_GOOGLE_KEY,
+  LoadingContainer: LoadingContainer,
+})(MapContainer)
+*/

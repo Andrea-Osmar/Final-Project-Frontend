@@ -6,11 +6,16 @@ export const Info = () => {
     <section className='info-wrapper'>
       <div className='info-container'>
         <h1 className='info-header'>About En Bostad</h1>
-        <p className='info-text'> En Bostad is the final project for <a href="https://www.technigo.io/" target="_blank" rel="noopener noreferrer">Technigo Front End Bootcamp. </a>
+        <p className='info-text'> En Bostad is the final project for 
+        <a href="https://www.technigo.io/" target="_blank" rel="noopener noreferrer">Technigo Front End Bootcamp. </a>
             The project was created during the last sprint of 4 weeks. 
-            The idea for the project came to mind was  after a talk with my tech mentor. 
-            The housing situation in Stockholm has been a problem for years, there are not enough rental apartments and they are usually hard to find. 
-            The idea for the project was to make it easier for the user to find out what apartments that are available and also what they are entitled to apply for.            The future of this project is to connect apartments from more places then Bostadsförmedlingen and maybe expand the page to different cities.
+            The idea for the project came to mind after a talk with my tech mentor. 
+            The housing situation in Stockholm has been a problem for years, there are not 
+            enough rental apartments and they are usually hard to find. 
+            The idea for the project was to make it easier for the user to find out what apartments 
+            that are available and also what they are entitled to apply for.            
+            The future of this project is to connect apartments from 
+            more places then Bostadsförmedlingen and maybe expand the page to different cities as well.
         </p>
         <p className='info-details'>All images are from <a href='https://unsplash.com/'>Unsplash</a></p>
         <p className='info-details'>Icons are from <a href='https://fontawesome.com/'>Font Awesome</a></p>
@@ -30,11 +35,11 @@ export const Info = () => {
           <span className='info-icons'><a href="https://github.com/Andrea-Osmar"><i className="fab fa-github-square" /></a></span>
         </div>
         </div>
-        <button className='start-button'>
-          <Link to='/home' className='start-button-link'>
+        <Link to='/home' className='start-button-link'>
+          <button className='start-button'>
             Back Home
-          </Link>
-        </button>
+          </button>
+        </Link>
     </section>
   )
 }

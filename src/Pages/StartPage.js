@@ -12,11 +12,11 @@ export const StartPage = () => {
         <br />
         En Bostad är platsen där alla kan hitta hem. Vare sig du letar efter din
         första lägenhet eller ett hem till din stora familj.
-        <button className='start-button'>
           <Link to='/home' className='start-button-link'>
+          <button className='start-button'>
             Hitta Hem
-          </Link>
-        </button>
+            </button>
+          </Link> 
       </div>
     </section>
     <Footer />

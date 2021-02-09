@@ -7,11 +7,7 @@ export const Footer = () => {
       <div className='footer-section'>
         <h5>Om Oss</h5>
         <p>Detta är ett projekt skapat för Technigo Bootcamp.</p>
-        <button className='footer-button'>
-          <Link to='/info' className='footer-button-link'>
-            Mer information
-          </Link>
-        </button>
+        
       </div>
       <div className='footer-section'>
         <h5>Kontakta Oss</h5>
@@ -24,6 +20,11 @@ export const Footer = () => {
         <span className='footer-icons'><i className="far fa-envelope"></i></span>
         <span className='footer-icons'><i className="fab fa-instagram"></i></span>
         <span className='footer-icons'><i className="fab fa-facebook-square"></i></span>
+        <Link to='/info' className='footer-button-link'>
+          <button className='footer-button'>
+            Mer information
+          </button>
+        </Link>
       </div>
     </footer>
   )

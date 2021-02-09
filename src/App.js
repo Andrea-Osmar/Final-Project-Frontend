@@ -12,7 +12,7 @@ import { Info } from './Pages/Info'
 
 export const App = () => {
   return (
-    <main>
+    <main className='main-container'>
       <BrowserRouter>
         <Navbar />
         <Switch>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 import { ErrorMessage } from '../Components/ErrorMessage'
 
@@ -10,10 +11,14 @@ export const SignIn = ({ signIn, signInStatus }) => {
     event.preventDefault()
     const user = {
       email: email,
-      password: password,
+      password: password, 
     }
     signIn(user)
+    //refreshPage()
   }
+  //  const refreshPage = () => {
+  //   window.location.reload()
+  //  }
 
   return (
     <section>

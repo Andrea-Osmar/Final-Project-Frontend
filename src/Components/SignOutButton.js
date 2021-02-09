@@ -3,8 +3,12 @@ import React from 'react'
 export const SignOutButton = ({ signOut }) => {
   const handleSignOut = () => {
     signOut('')
+    refreshPage()
   }
-
+  const refreshPage = ()=>{
+    window.location.reload()
+  }
+  
   return (
     <div className='signOut-text'>
       <h3 className='start-logo'>Tack för besöket</h3>

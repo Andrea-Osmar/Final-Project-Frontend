@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { Map, Marker, InfoWindow, GoogleApiWrapper } from 'google-maps-react'
 import Loader from 'Components/Loader'
 
+const apiKey =  process.env.REACT_APP_GOOGLE_KEY
+
 export const MapContainer = (props) => {
   const google = window.google
 
@@ -12,8 +14,8 @@ export const MapContainer = (props) => {
   })
 
   const onMarkerClick = (props, marker, e) => {
-    console.log(props)
-    console.log('test')
+    //console.log(props)
+    //console.log('test')
     setState({
       selectedItem: props,
       activeMarker: marker,
@@ -22,7 +24,7 @@ export const MapContainer = (props) => {
   }
 
   if (props.data === 0) {
-    console.error('test 2')
+    //console.error('test 2')
     return <></>
   } else {
     // console.log(props)
@@ -68,12 +70,19 @@ export const MapContainer = (props) => {
     )
   }
 }
-const LoadingContainer = (props) => <Loader />
+
+const LoadingContainer = () => <Loader />
 
 export default GoogleApiWrapper({
-  apiKey: process.env.REACT_APP_GOOGLE_KEY,
+  apiKey,
   LoadingContainer: LoadingContainer,
 })(MapContainer)
+
+
+
+
+
+
 
 /*
 

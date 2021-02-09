@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import { getDataUrl, listUrl } from '../Paths/api-paths'
 import Loader from '../Components/Loader'
 import { Error } from '../Components/Error'
-import { Footer } from '../Components/Footer'
 
 export const Profile = () => {
   const [loading, setLoading] = useState(true)
@@ -90,7 +89,6 @@ export const Profile = () => {
           </div>
         </section>
       )}
-      <Footer />
     </>
   )
 }

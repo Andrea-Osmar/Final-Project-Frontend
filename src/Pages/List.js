@@ -8,8 +8,10 @@ import Loader from '../Components/Loader'
 
 const CityList = (props) => {
   return (
+    <>
+    <Scroll showBelow={250} />
     <div id='city-list' className='list-wrapper'>
-      <Scroll showBelow={250} />
+      
       {props.items.map((item) => (
         <Card
           key={item.AnnonsId}
@@ -18,6 +20,7 @@ const CityList = (props) => {
         />
       ))}
     </div>
+    </>
   )
 }
 

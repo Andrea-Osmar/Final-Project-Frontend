@@ -45,6 +45,7 @@ export const Users = () => {
       .then((data) => {
         setToken(data.accessToken)
         window.localStorage.setItem('tokenAuth', data.accessToken)
+        window.location = "/home"
       })
       .catch((error) => {
         setSignInOk(false)
@@ -83,13 +84,13 @@ export const Users = () => {
     <>
       <section className='form-container'>
         {!token && mode === 'signIn' && (
-          <SignIn signInStatus={signInOk} signIn={signInUser} />
+          <SignIn signIn={signInUser} signInStatus={signInOk}/>
         )}
         {!token && mode === 'signUp' && (
-          <SignUp signUpStatus={signUpOk} signUp={signUpUser} />
+          <SignUp signUp={signUpUser} signUpStatus={signUpOk}/>
         )}
-        {!token && <ToggleButton mode={mode} setModeinApp={handleChangeMode} />}
-        {token && <SignOutButton signOut={handleSignOut} />}
+        {!token && <ToggleButton mode={mode} setModeinApp={handleChangeMode}/>}
+        {token && <SignOutButton signOut={handleSignOut}/>}
       </section>
     </>
   )

@@ -41,11 +41,19 @@ export const Navbar = () => {
                 </Link>
               </li>
             )}
-            <li className='nav-item'>
+            {token && ( <li className='nav-item'>
               <Link to='/users' className='nav-links' onClick={closeMobileMenu}>
-                Logga In/Ut
+                Logga Ut
               </Link>
             </li>
+                )}
+                {!token && (
+            <li className='nav-item'>
+              <Link to='/users' className='nav-links' onClick={closeMobileMenu}>
+                Logga In
+              </Link>
+            </li>
+                )}
           </ul>
         </div>
       </nav>

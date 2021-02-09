@@ -3,7 +3,6 @@ import { Map, Marker, InfoWindow, GoogleApiWrapper } from 'google-maps-react'
 import Loader from 'Components/Loader'
 
 const apiKey =  process.env.REACT_APP_GOOGLE_KEY
-console.log("apikey", apiKey)
 
 export const MapContainer = (props) => {
   const google = window.google
@@ -72,23 +71,9 @@ export const MapContainer = (props) => {
   }
 }
 
-const LoadingContainer = () => <Loader />
+const LoadingContainer = (props) => <Loader />
 
 export default GoogleApiWrapper({
   apiKey,
   LoadingContainer: LoadingContainer,
 })(MapContainer)
-
-
-
-
-
-
-
-/*
-
-export default GoogleApiWrapper({
-  apiKey: process.env.REACT_APP_GOOGLE_KEY,
-  LoadingContainer: LoadingContainer,
-})(MapContainer)
-*/

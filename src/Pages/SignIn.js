@@ -13,11 +13,7 @@ export const SignIn = ({ signIn, signInStatus }) => {
       password: password, 
     }
     signIn(user)
-    //refreshPage()
   }
-  //  const refreshPage = () => {
-  //   window.location.reload()
-  //  }
 
   return (
     <section>

@@ -11,7 +11,7 @@ export const Footer = () => {
       </div>
       <div className='footer-section'>
         <h5>Kontakta Oss</h5>
-        <p className='footer-info'>Kundservice & Kontakt</p>
+        <p className='footer-info'>Kundservice</p>
         <p className='footer-info'>Press</p>
         <p className='footer-info'>Jobba hos oss</p>
       </div>

@@ -5,9 +5,9 @@ export const SignOutButton = ({ signOut }) => {
     signOut('')
     refreshPage()
   }
-  const refreshPage = ()=>{
-    window.location.reload()
-  }
+    const refreshPage = () => {
+      window.location.reload()
+    }
   
   return (
     <div className='signOut-text'>

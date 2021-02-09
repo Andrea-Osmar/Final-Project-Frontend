@@ -4,21 +4,23 @@ import IconButton from '@material-ui/core/IconButton'
 
 export const Scroll = (showBelow) => {
   const [show, setShow] = useState(showBelow ? false : true)
-  const div = window.document.getElementById('city-list')
 
   const handleScroll = () => {
-    //console.log(div.scrollTop)
-    //console.log(showBelow.showBelow)
+    const div = window.document.getElementById('city-list')
+    if (div) {
+      //console.log("div.scrollTop", div.scrollTop)
+      //console.log("showbelow", showBelow.showBelow)
 
-    if (div.scrollTop > showBelow.showBelow) {
-      //console.log(true)
-      if (!show) setShow(true)
-    } else {
-      if (show) setShow(false)
+      if(div.scrollTop > showBelow.showBelow) {
+        if(!show) setShow(true)
+      } else { 
+        if(show) setShow(false)
+      }
     }
   }
 
   const handleClick = () => {
+    const div = window.document.getElementById('city-list')
     div[`scrollTo`]({ top: 0, behaviour: `smooth` })
   }
 

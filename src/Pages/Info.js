@@ -7,7 +7,7 @@ export const Info = () => {
       <div className='info-container'>
         <h1 className='info-header'>About En Bostad</h1>
         <p className='info-text'> En Bostad is the final project for 
-        <a href="https://www.technigo.io/" target="_blank" rel="noopener noreferrer">Technigo Front End Bootcamp. </a>
+        <a href="https://www.technigo.io/" target="_blank" rel="noopener noreferrer"> Technigo Front End Bootcamp. </a>
             The project was created during the last sprint of 4 weeks. 
             The idea for the project came to mind after a talk with my tech mentor. 
             The housing situation in Stockholm has been a problem for years, there are not 

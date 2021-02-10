@@ -18,7 +18,7 @@ export const ToggleButton = ({ mode, setModeinApp }) => {
         type='button'
         className='button-toggle'
       >
-        {mode === 'signUp' ? 'Sign in' : 'Sign up'}
+        {mode === 'signUp' ? 'Logga In' : 'Skapa Användare'}
       </button>
     </div>
   )

@@ -34,12 +34,12 @@ export const SignUp = ({ signUp, signUpStatus }) => {
   return (
     <section>
       <form onSubmit={(event) => handleRegistration(event)} className='form'>
-        <h2>Sign up here</h2>
+        <h2>Skapa ny användare</h2>
         <input
           type='email'
           id='email'
           required
-          placeholder='E-mail address'
+          placeholder='E-mail'
           onChange={(event) => setEmail(event.target.value)}
           value={email}
           pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$'
@@ -48,7 +48,7 @@ export const SignUp = ({ signUp, signUpStatus }) => {
         <input
           type='text'
           id='userName'
-          placeholder='Username'
+          placeholder='Användarnamn'
           onChange={(event) => setUserName(event.target.value)}
           value={userName}
           disabled={signUpStatus}
@@ -57,7 +57,7 @@ export const SignUp = ({ signUp, signUpStatus }) => {
           type='password'
           id='password'
           required
-          placeholder='Password'
+          placeholder='Lösenord'
           onChange={(event) => setPassword(event.target.value)}
           value={password}
           minLength='5'
@@ -67,7 +67,7 @@ export const SignUp = ({ signUp, signUpStatus }) => {
           type='password'
           id='repeatPassword'
           required
-          placeholder='Repeat your password'
+          placeholder='Repetera lösenord'
           onChange={(event) => setRepeatPassword(event.target.value)}
           value={repeatPassword}
           minLength='5'
@@ -88,7 +88,7 @@ export const SignUp = ({ signUp, signUpStatus }) => {
             'Registration successful. Continue to sign in.'}
         </output>
         <button className='button' type='submit' disabled={signUpStatus}>
-          Sign Up
+          Skapa användare
         </button>
       </form>
     </section>

@@ -59,7 +59,7 @@ export const Profile = () => {
       {loading && <Loader />}
       {!loading && (
         <section className="profile-container">
-          <h1>Dina sparade bostäder</h1>
+          <h2>Dina sparade bostäder</h2>
           <div className="saved-wrapper">
             {savedApartmentList.map((saved) => (
               <div className="saved-card" key={saved.AnnonsId}>

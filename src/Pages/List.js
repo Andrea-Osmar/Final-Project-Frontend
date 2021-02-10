@@ -46,7 +46,6 @@ export const List = () => {
 
   return (
     <>
-      <h1>Lägenheter i Stockholm</h1>
       <section className='list-container'>
         <div className='wrap'>
           <div className='map-container'>

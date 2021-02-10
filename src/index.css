@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@1,300&display=swap');
 
 * {
   box-sizing: border-box;
@@ -9,9 +10,7 @@
 }
 
 body {
-  background: #8e9eab;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #eef2f3, #8e9eab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #8e9eab;  
   font-family: 'Lato', sans-serif;
 }
 
@@ -33,7 +32,7 @@ h2 {
 
 h3 {
   text-align: center;
-  font-size: 17px;
+  font-size: 17px; 
   margin: 10px 0 5px;
 }
 
@@ -70,8 +69,15 @@ p {
   color: #fff;
   text-decoration: none;
   font-size: 35px;
-  margin-left: 46px;
-  font-family: 'Playball', cursive;
+  font-weight: 700;
+  position: absolute;
+  left: 20px;
+}
+
+.navbar-header {
+  color: #fff;
+  font-size: 22px;
+  margin-left: 25px;
 }
 
 .navbar-container {	
@@ -87,7 +93,7 @@ p {
   grid-gap: 10px;	
   list-style: none;	
   text-align: center;	
-  width: 76vw;	
+  width: 80vw;	
   justify-content: end;	
   margin-right: 2rem;	
 }
@@ -124,7 +130,7 @@ ul {
 /* START PAGE */
 
 .start-container {
-  background-image: url("https://source.unsplash.com/1600x900/?stockholm?orientation=landscape");
+  background-image: url("https://source.unsplash.com/1600x900/?stockholm-building?orientation=landscape");
   background-repeat: no-repeat;
   width: 100vw;
   height: 78vh;
@@ -136,40 +142,40 @@ ul {
 
 .start-button {
   padding: 5px;
-  margin: 12px;
-  border-radius: 5px;
+  border: none;
   text-decoration: none;
-  background-color: white;
+  background-color: #ffffff;
   height: 45px;
   width: 150px;  
-  box-shadow: 0 20px 20px 0 #777171;
   font-size: 20px;
-  font-family: 'Playball', cursive;
+}
+
+.start-button:hover,
+.footer-button:hover {
+  cursor: pointer;
+  background-color: #f7f5f5;
 }
 
 .start-button-link,
 .footer-button-link {
   text-decoration: none;
-  color: black;
+  color: #000000;
 }
 
 .start-text {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  border: 2px solid black;
   width: 460px;
   height: 500px;
   padding: 30px;
   line-height: 24px;
   background-color: #e1dcdcf0;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .start-logo {
-  color: black;
+  color: #000000;
   font-size: 35px;
-  font-family: 'Playball', cursive;
 }
 /* LIST */
 
@@ -180,6 +186,7 @@ ul {
 }
 
 .list-wrapper {
+  width: 350px;
   overflow-y: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -192,26 +199,16 @@ ul {
 .list-card {
   display: flex;
   flex-direction: column;
-  border: 2px #0000002b solid;
   align-items: center;
-  width: 280px;
+  width: 260px;
   margin: 10px;
   padding: 10px;
-  background-color: white;
-  box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+  background-color: #f5f5f5;
   font-family: 'Lato', sans-serif;
 }
 
-.list-card:hover,
-.saved-card:hover {
-  box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
-  transform: translateY(2px);
-  -webkit-animation: gradientBG 1.5s ease-in-out forwards;
-  animation: gradientBG 1.5s ease-in-out forwards;
-}
-
-.list-card:hover .list-arrow {
-  display: none;
+.list-card:hover {
+  background-color: #eaeaea;
 }
 
 .fa-circle {
@@ -284,12 +281,13 @@ ul {
 /* SCROLL  TO TOP */
 
 .MuiIconButton-root {
-  color: black !important;
+  color: #000000 !important;
   z-index: 2 !important;;
   position: fixed !important;;
   bottom: 2vh !important;
-  background-color: #8e9eabad !important;
+  background-color: #d5d2d2d6 !important;
   left: 12px !important;
+  bottom: 45px !important;
 }  
 
 .MuiIconButton-root:hover {
@@ -307,11 +305,12 @@ ul {
 .house-marker img,
 .house-logo {
   height: 25px;
+  margin-right: 10px; 
 }
 
 .wrap {
   position: sticky;
-  height: 80%;
+  height: 90%;
   width: 80%;
   margin: 13px 25px;
 }
@@ -337,16 +336,14 @@ ul {
 	flex-direction: column;
 	justify-content: space-evenly;
 	align-items: center;
-	background: #8e9eabd4;
-	box-shadow: 20px 20px 30px gray;
-  border-radius: 4px;
+	background: #9fa7adcc;
 }
 
 .form-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url("https://source.unsplash.com/1600x900/?stockholm?orientation=landscape");
+  background-image: url("https://source.unsplash.com/1600x900/?stockholm-building?orientation=landscape");
   background-repeat: no-repeat;
   width: 100vw;
   height: 100vh;
@@ -362,8 +359,7 @@ ul {
 }
 
 input {
-  border-radius: 3px;
-  background-color: #fff;
+  background-color: #ffffff;
   width: 200px;
   height: 40px;
   padding: 2px;
@@ -389,20 +385,18 @@ input::placeholder {
   text-align: center;
   padding: 5px;
   margin-top: 5px;
-  border-radius: 5px;
-  color: #fff;
+  color: #ffffff;
   background: #000000;
-  width: 88%;
+  width: 200px;
   height: 40px;
+  border: none;
 }
 
 .button-sign-out:hover,
 .error-button:hover,
-.button:hover,
-.start-button:hover,
-.footer-button:hover {
+.button:hover {
 	cursor: pointer;
-	background-color: #8e9eab;
+  background-color: #141414;
 }
 
 .button-toggle {
@@ -450,12 +444,10 @@ input::placeholder {
 .saved-card {
   display: flex;
   flex-direction: column;
-  border: 2px #0000002b solid;
-  background-color: whitesmoke;
+  background-color: #f5f5f5;
   width: 215px;
   margin: 13px;
   padding: 10px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.8);
   font-family: 'Lato', sans-serif;
 }
 
@@ -464,18 +456,20 @@ input::placeholder {
   font-size: 14px;
 }
 
+.saved-card:hover {
+  background-color: #eaeaea;
+}
+
 /* SIGN OUT */
 
 .signOut-text {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  border: 2px solid black;
   width: 300px;
   height: 320px;
   padding: 30px;
   margin-top: 50px;
-  line-height: 24px;
   background-color: #e1dcdcf0;
 }
 
@@ -485,7 +479,7 @@ input::placeholder {
   background: linear-gradient( 
   90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
   color:#fff;
-  height: 117px;
+  height: 120px;
   display: flex;
   justify-content: space-evenly;
   align-items: baseline;
@@ -514,9 +508,13 @@ input::placeholder {
 }
 
 .footer-button {
-  padding: 3px;
-  font-family: 'Lato', sans-serif;
-  margin-top: 10px;
+  padding: 5px;
+  border: none;
+  text-decoration: none;
+  background-color: #ffffff;
+  height: 30px;
+  width: 114px;
+  font-size: 13px;
 }
 
 /* LOADER */
@@ -568,8 +566,7 @@ input::placeholder {
 }
 
 .info-header {
-  font-family: 'Playball', cursive;
-  color: black;
+  color: #000000;
   margin: 0 20px 20px;
 }
 
@@ -578,10 +575,9 @@ input::placeholder {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
-  margin: 40px 0 0 0;
+  box-shadow: rgb(0 0 0 / 10%) 0px 5px 15px;
+  margin: 20px;
   padding: 30px;
-  border-radius: 8px;
 }
 
 .info-text {
@@ -612,40 +608,48 @@ input::placeholder {
 
 /* MEDIA QUERIES */
 
-@media (max-width: 375px) {
+@media (min-width: 320px) and (max-width: 480px) {
 
-  .list-container {
+.list-wrapper {
+  width: 330px;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.list-card {
+  width: 313px;
+}
+
+.list-container {
     flex-direction: column;
   }
 
-  .map-container {
+.wrap {
+  width: 88%;
+}
+
+.map-container {
     height: 350px;
   }
 
-  .wrap {
-    margin: 0 0 10px 40px;
-  }
-
-  .start-text {
+.start-text {
     width: 350px;
     height: 420px;
   }
+
+  .footer-info {
+    font-size: 12px;
+  }
 } 
 
-
-.list-wrapper {
-  /* max-width: 390px;
-  display: flex;
-  flex-direction: column;
-  align-self: center; */
+@media (min-width: 480px) and (max-width: 768px) {
+.wrap {
+  width: 76%;
+}
 }
 
 @media (max-width: 960px) {
-
-  .list-container {
-    flex-direction: column;
-  }
-
   h1 {
     font-size: 25px;
   }
@@ -686,10 +690,13 @@ input::placeholder {
   }
 
   .navbar-logo {
-    position: absolute;
     top: 0;
     left: 0;
-    transform: translate(25%, 50%);
+  }
+
+  .navbar-header {
+    margin-left: 10px; 
+    font-size: 15px;
   }
 
   .nav-item {
@@ -714,4 +721,11 @@ input::placeholder {
   .form {
   width: 300px
   }
+}
+
+@media (min-width: 1024px){
+
+.list-card {
+  width: 320px;
+}
 }

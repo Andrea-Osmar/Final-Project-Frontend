@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Map, Marker, InfoWindow, GoogleApiWrapper } from 'google-maps-react'
-import Loader from 'Components/Loader'
 
 const apiKey =  process.env.REACT_APP_GOOGLE_KEY
 
@@ -71,7 +70,7 @@ export const MapContainer = (props) => {
   }
 }
 
-const LoadingContainer = (props) => <Loader />
+const LoadingContainer = (props) => <h3>Laddar Karta...</h3>
 
 export default GoogleApiWrapper({
   apiKey,

@@ -13,8 +13,9 @@ export const Navbar = () => {
       <nav className='navbar'>
         <div className='navbar-container'>
           <Link to='/home' className='navbar-logo'>
-            En Bostad
+            <h1>En Bostad <span className='navbar-header'>Lägenheter i Stockholm</span></h1> 
           </Link>
+          
           <div className='menu-icon' onClick={handleClick}>
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
           </div>

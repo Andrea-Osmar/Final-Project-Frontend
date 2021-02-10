@@ -19,13 +19,13 @@ export const SignIn = ({ signIn, signInStatus }) => {
     <section>
       <form onSubmit={(event) => handleSignIn(event)} className='form'>
         <h2 className='signIn' id='signIn'>
-          Sign in here
+          Logga In
         </h2>
         <input
           type='email'
           id='email'
           required
-          placeholder='E-mail address'
+          placeholder='E-mail'
           onChange={(event) => setEmail(event.target.value)}
           value={email}
           pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$'
@@ -34,12 +34,12 @@ export const SignIn = ({ signIn, signInStatus }) => {
           type='password'
           id='password'
           required
-          placeholder='Password'
+          placeholder='Lösenord'
           onChange={(event) => setPassword(event.target.value)}
           value={password}
         ></input>
         <button className='button' type='submit'>
-          Sign in
+          Logga in
         </button>
         <output>
           {signInStatus === false && (

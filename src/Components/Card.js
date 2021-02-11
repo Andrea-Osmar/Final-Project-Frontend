@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-
 import { saveDataUrl } from '../Paths/api-paths'
 
 export const Card = (props) => {
@@ -11,186 +10,75 @@ export const Card = (props) => {
     const idData = {
       annonsId: String(data.AnnonsId),
     }
-    //console.log(JSON.stringify(idData))
 
     fetch(saveDataUrl, {
       method: 'POST',
       headers: {
-        'Content-type': 'application/json charset=UTF-8',
+        'Content-type': 'application/json; charset=UTF-8',
         Authorization: token,
       },
       body: JSON.stringify(idData),
     })
       .then((res) => res.json())
-      .then((getJson) => {
-        //console.log(getJson)
-      })
+      .then((getJson) => {})
   }
 
   return (
-    <div className='list-card'>
+    <div className="list-card">
       <h3>
-        <button className='list-location'>
+        <button className="list-location">
           <img
-            className='house-logo'
-            src='/houses.png'
-            alt='pin'
+            className="house-logo"
+            src="/houses.png"
+            alt="pin"
             onClick={props.onClick}
           />
         </button>
         {data.Gatuadress}
         {token && (
           <button
-            className='save-button'
+            className="save-button"
             token={token}
             onClick={() => postSavedData()}
           >
-            {console.log("data.AnnonsId", data.AnnonsId )}
-            <i className='far fa-bookmark'></i>
+            <i className="far fa-bookmark"></i>
           </button>
         )}
       </h3>
-      <div className='list-details'>
+      <div className="list-details">
         <p>{data.Stadsdel}</p>
         <span>
-          <i className='fas fa-circle'></i>
+          <i className="fas fa-circle"></i>
         </span>
         <p>{data.AntalRum} Rum</p>
         <span>
-          <i className='fas fa-circle'></i>
+          <i className="fas fa-circle"></i>
         </span>
         {data.Yta && <p>{data.Yta} kvm</p>}
-        {data.Yta && <span>
-          <i className='fas fa-circle'></i>
-        </span>}
+        {data.Yta && (
+          <span>
+            <i className="fas fa-circle"></i>
+          </span>
+        )}
         {data.Hyra && <p>{data.Hyra} SEK</p>}
-        {data.Hyra && <span>
-          <i className='fas fa-circle'></i>
-        </span>}
+        {data.Hyra && (
+          <span>
+            <i className="fas fa-circle"></i>
+          </span>
+        )}
         <a
-          className='list-url'
+          className="list-url"
           key={data.AnnonsId}
           href={`https://bostad.stockholm.se/${data.Url}`}
-          target='_blank'
-          rel='noopener noreferrer'
+          target="_blank"
+          rel="noopener noreferrer"
         >
           Details
           <span>
-            <i className='fas fa-angle-right'></i>
+            <i className="fas fa-angle-right"></i>
           </span>
         </a>
       </div>
     </div>
   )
 }
-
-
-
-
-
-/*
-import React, { useState } from 'react'
-
-import { saveDataUrl, deleteDataUrl } from '../Paths/api-paths'
-
-export const Card = (props) => {
-  const data = props.data
-  const tokenFromStorage = () => window.localStorage.getItem('tokenAuth') || ''
-  const [token] = useState(tokenFromStorage)
-  const [saved, setSaved] = useState(false)
-
-  const fetchSavedData = () => {
-    const idData = {
-      annonsId: String(data.AnnonsId),
-    }
-
-    if (!saved) {
-    //console.log(JSON.stringify(idData))
-
-    fetch(saveDataUrl, {
-      method: 'POST',
-      headers: {
-        'Content-type': 'application/json charset=UTF-8',
-        Authorization: token,
-      },
-      body: JSON.stringify(idData),
-    })
-      .then((res) => res.json())
-      .then((getJson) => {
-        setSaved(true)
-        //Change icon
-        //console.log(getJson)
-      })
-    } else {
-      fetch(deleteDataUrl, {
-        method: 'DELETE',
-        headers: {
-          'Content-type': 'application/json charset=UTF-8',
-          Authorization: token,
-        },
-        body: JSON.stringify(idData),
-      })
-        .then((res) => res.json())
-        .then((getJson) => {
-          setSaved(false)
-          //Change icon
-          //console.log(getJson)
-        })
-    }
-  }
-
-  return (
-    <div className='list-card'>
-      <h3>
-        {data.Gatuadress}
-        {token && (
-          <button
-            className='save-button'
-            token={token}
-            onClick={() => fetchSavedData()}
-          >
-            <i className='far fa-bookmark'></i>
-          </button>
-        )}
-      </h3>
-      <button className='list-location'>
-        <img
-          className='house-logo'
-          src='/houses.png'
-          alt='pin'
-          onClick={props.onClick}
-        />
-      </button>
-      <div className='list-details'>
-        <p>{data.Stadsdel}</p>
-        <span>
-          <i className='fas fa-circle'></i>
-        </span>
-        <p>{data.AntalRum} Rum</p>
-        <span>
-          <i className='fas fa-circle'></i>
-        </span>
-        {data.Yta && <p>{data.Yta} kvm</p>}
-        {data.Yta && <span>
-          <i className='fas fa-circle'></i>
-        </span>}
-        {data.Hyra && <p>{data.Hyra} SEK</p>}
-        {data.Hyra && <span>
-          <i className='fas fa-circle'></i>
-        </span>}
-        <a
-          className='list-url'
-          key={data.AnnonsId}
-          href={`https://bostad.stockholm.se/${data.Url}`}
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Details
-          <span>
-            <i className='fas fa-angle-right'></i>
-          </span>
-        </a>
-      </div>
-    </div>
-  )
-}*/

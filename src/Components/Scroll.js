@@ -8,13 +8,10 @@ export const Scroll = (showBelow) => {
   const handleScroll = () => {
     const div = window.document.getElementById('city-list')
     if (div) {
-      //console.log("div.scrollTop", div.scrollTop)
-      //console.log("showbelow", showBelow.showBelow)
-
-      if(div.scrollTop > showBelow.showBelow) {
-        if(!show) setShow(true)
-      } else { 
-        if(show) setShow(false)
+      if (div.scrollTop > showBelow.showBelow) {
+        if (!show) setShow(true)
+      } else {
+        if (show) setShow(false)
       }
     }
   }
@@ -35,7 +32,7 @@ export const Scroll = (showBelow) => {
   return (
     <div>
       {show && (
-        <IconButton onClick={handleClick} aria-label='to top' component='span'>
+        <IconButton onClick={handleClick} aria-label="to top" component="span">
           <ExpandLessIcon />
         </IconButton>
       )}

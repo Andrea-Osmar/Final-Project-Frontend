@@ -17,7 +17,6 @@ export const Profile = () => {
       .then((res) => res.json())
       .then((listJson) => {
         setApartmentList(listJson)
-        //console.log("list", listJson)
       })
       .finally(() => {
         fetch(getDataUrl, {
@@ -59,27 +58,24 @@ export const Profile = () => {
       {loading && <Loader />}
       {!loading && (
         <section className="profile-container">
-          <h2>Dina sparade bostäder</h2>
+          <h2 className="profile-header">Dina sparade bostäder</h2>
           <div className="saved-wrapper">
             {savedApartmentList.map((saved) => (
               <div className="saved-card" key={saved.AnnonsId}>
-                <button className="saved-delete">
-                  <span>
-                    <i className="far fa-times-circle" />
-                  </span>
-                </button>
                 <h4>{saved.Gatuadress}</h4>
                 <p>{saved.Stadsdel}</p>
                 <p>{saved.AntalRum} Rum</p>
                 {saved.Yta && <p>{saved.Yta} kvm</p>}
-                {saved.Hyra && <p className="saved-card-details">{saved.Hyra} SEK</p>}
+                {saved.Hyra && (
+                  <p className="saved-card-details">{saved.Hyra} SEK</p>
+                )}
                 <a
                   className="list-url"
                   href={`https://bostad.stockholm.se/${saved.Url}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Details
+                  Detaljer
                   <span>
                     <i className="fas fa-angle-right"></i>
                   </span>

@@ -28,49 +28,49 @@ export const SignUp = ({ signUp, signUpStatus }) => {
     }
     if (checkPasswordMatch()) {
       signUp(user)
-    } else console.log("passwords don't match")
+    }
   }
 
   return (
     <section>
-      <form onSubmit={(event) => handleRegistration(event)} className='form'>
+      <form onSubmit={(event) => handleRegistration(event)} className="form">
         <h2>Skapa ny användare</h2>
         <input
-          type='email'
-          id='email'
+          type="email"
+          id="email"
           required
-          placeholder='E-mail'
+          placeholder="E-mail"
           onChange={(event) => setEmail(event.target.value)}
           value={email}
-          pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$'
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
           disabled={signUpStatus}
         ></input>
         <input
-          type='text'
-          id='userName'
-          placeholder='Användarnamn'
+          type="text"
+          id="userName"
+          placeholder="Användarnamn"
           onChange={(event) => setUserName(event.target.value)}
           value={userName}
           disabled={signUpStatus}
         ></input>
         <input
-          type='password'
-          id='password'
+          type="password"
+          id="password"
           required
-          placeholder='Lösenord'
+          placeholder="Lösenord"
           onChange={(event) => setPassword(event.target.value)}
           value={password}
-          minLength='5'
+          minLength="5"
           disabled={signUpStatus}
         ></input>
         <input
-          type='password'
-          id='repeatPassword'
+          type="password"
+          id="repeatPassword"
           required
-          placeholder='Repetera lösenord'
+          placeholder="Repetera lösenord"
           onChange={(event) => setRepeatPassword(event.target.value)}
           value={repeatPassword}
-          minLength='5'
+          minLength="5"
           disabled={signUpStatus}
         ></input>
         <output>
@@ -83,11 +83,11 @@ export const SignUp = ({ signUp, signUpStatus }) => {
             <ErrorMessage message={'Sign up failed.'} />
           )}
         </output>
-        <output className='sign-up-success'>
+        <output className="sign-up-success">
           {signUpStatus === true &&
             'Registration successful. Continue to sign in.'}
         </output>
-        <button className='button' type='submit' disabled={signUpStatus}>
+        <button className="button" type="submit" disabled={signUpStatus}>
           Skapa användare
         </button>
       </form>

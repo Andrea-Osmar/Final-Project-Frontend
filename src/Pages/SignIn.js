@@ -10,35 +10,35 @@ export const SignIn = ({ signIn, signInStatus }) => {
     event.preventDefault()
     const user = {
       email: email,
-      password: password, 
+      password: password,
     }
     signIn(user)
   }
 
   return (
     <section>
-      <form onSubmit={(event) => handleSignIn(event)} className='form'>
-        <h2 className='signIn' id='signIn'>
+      <form onSubmit={(event) => handleSignIn(event)} className="form">
+        <h2 className="signIn" id="signIn">
           Logga In
         </h2>
         <input
-          type='email'
-          id='email'
+          type="email"
+          id="email"
           required
-          placeholder='E-mail'
+          placeholder="E-mail"
           onChange={(event) => setEmail(event.target.value)}
           value={email}
-          pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$'
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
         ></input>
         <input
-          type='password'
-          id='password'
+          type="password"
+          id="password"
           required
-          placeholder='Lösenord'
+          placeholder="Lösenord"
           onChange={(event) => setPassword(event.target.value)}
           value={password}
         ></input>
-        <button className='button' type='submit'>
+        <button className="button" type="submit">
           Logga in
         </button>
         <output>

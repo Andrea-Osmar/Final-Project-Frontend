@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 
 import { SignUp } from './SignUp'
 import { SignIn } from './SignIn'
-import { signUpUrl, signInUrl } from '../Paths/api-paths'
 import { ToggleButton } from '../Components/ToggleButton'
 import { SignOutButton } from '../Components/SignOutButton'
+import { signUpUrl, signInUrl } from '../Paths/api-paths'
 
 export const Users = () => {
   const [mode, setMode] = useState('signIn')
@@ -45,7 +45,7 @@ export const Users = () => {
       .then((data) => {
         setToken(data.accessToken)
         window.localStorage.setItem('tokenAuth', data.accessToken)
-        window.location = "/home"
+        window.location = '/home'
       })
       .catch((error) => {
         setSignInOk(false)
@@ -82,15 +82,15 @@ export const Users = () => {
 
   return (
     <>
-      <section className='form-container'>
+      <section className="form-container">
         {!token && mode === 'signIn' && (
-          <SignIn signIn={signInUser} signInStatus={signInOk}/>
+          <SignIn signIn={signInUser} signInStatus={signInOk} />
         )}
         {!token && mode === 'signUp' && (
-          <SignUp signUp={signUpUser} signUpStatus={signUpOk}/>
+          <SignUp signUp={signUpUser} signUpStatus={signUpOk} />
         )}
-        {!token && <ToggleButton mode={mode} setModeinApp={handleChangeMode}/>}
-        {token && <SignOutButton signOut={handleSignOut}/>}
+        {!token && <ToggleButton mode={mode} setModeinApp={handleChangeMode} />}
+        {token && <SignOutButton signOut={handleSignOut} />}
       </section>
     </>
   )

@@ -4,7 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { SignIn } from './Pages/SignIn'
 import { Users } from './Pages/Users'
 import { Navbar } from './Components/Navbar'
-import { List } from './Pages/List'
+import { Home } from './Pages/Home'
 import { Profile } from './Pages/Profile'
 import { StartPage } from './Pages/StartPage'
 import { Error } from './Components/Error'
@@ -20,7 +20,7 @@ export const App = () => {
             <StartPage />
           </Route>
           <Route path='/home' exact>
-            <List />
+            <Home />
           </Route>
           <Route path='/users' exakt>
             <Users />

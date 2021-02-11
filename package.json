@@ -15,22 +15,13 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^2.5.1",
-    "google": "^2.1.0",
-    "google-map-react": "^2.1.9",
     "google-maps-react": "^2.0.6",
     "jquery": "^3.5.1",
-    "maps": "^0.3.3",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
-    "react-google-maps": "^9.4.5",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.4",
-    "react-slick": "^0.28.0",
-    "save": "^2.4.0",
-    "slick-carousel": "^1.8.1",
-    "supercluster": "^7.1.2",
-    "swr": "^0.4.0",
-    "use-supercluster": "^0.2.9"
+    "save": "^2.4.0"
   },
   "scripts": {
     "start": "react-scripts start",

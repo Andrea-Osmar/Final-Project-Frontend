@@ -9,22 +9,21 @@ import Loader from '../Components/Loader'
 const CityList = (props) => {
   return (
     <>
-    <Scroll showBelow={250} />
-    <div id='city-list' className='list-wrapper'>
-      
-      {props.items.map((item) => (
-        <Card
-          key={item.AnnonsId}
-          data={item}
-          onClick={(e) => props.onClick(e, item)}
-        />
-      ))}
-    </div>
+      <Scroll showBelow={250} />
+      <div id="city-list" className="list-wrapper">
+        {props.items.map((item) => (
+          <Card
+            key={item.AnnonsId}
+            data={item}
+            onClick={(e) => props.onClick(e, item)}
+          />
+        ))}
+      </div>
     </>
   )
 }
 
-export const List = () => {
+export const Home = () => {
   const [loading, setLoading] = useState(true)
   const [apartmentList, setApartmentList] = useState([])
   const [state, setState] = useState({
@@ -46,9 +45,9 @@ export const List = () => {
 
   return (
     <>
-      <section className='list-container'>
-        <div className='wrap'>
-          <div className='map-container'>
+      <section className="list-container">
+        <div className="map-wrapper">
+          <div className="map-container">
             <MapContainer
               center={{ lat: 59.329323, lng: 18.068581 }}
               zoom={10}
@@ -61,7 +60,7 @@ export const List = () => {
         {!loading && (
           <CityList items={apartmentList} onClick={showInfo.bind(this)} />
         )}
-        </section>
+      </section>
     </>
   )
 }

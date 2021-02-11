@@ -12,33 +12,17 @@ import { Info } from './Pages/Info'
 
 export const App = () => {
   return (
-    <main className='main-container'>
-      <BrowserRouter>
-        <Navbar />
-        <Switch>
-          <Route path='/' exact>
-            <StartPage />
-          </Route>
-          <Route path='/home' exact>
-            <Home />
-          </Route>
-          <Route path='/users' exakt>
-            <Users />
-          </Route>
-          <Route path='/signIn' exakt>
-            <SignIn />
-          </Route>
-          <Route path='/profile' exakt>
-            <Profile />
-          </Route>
-          <Route path='/error' exakt>
-            <Error />
-          </Route>
-          <Route path='/info' exakt>
-            <Info />
-          </Route>
-        </Switch>
-      </BrowserRouter>
-    </main>
+    <BrowserRouter>
+      <Navbar />
+      <Switch>
+        <Route path="/" component={StartPage} exact />
+        <Route path="/home" component={Home} exact />
+        <Route path="/users" component={Users} exakt />
+        <Route path="/signIn" component={SignIn} exakt />
+        <Route path="/profile" component={Profile} exakt />
+        <Route path="/error" component={Error} exakt />
+        <Route path="/info" component={Info} exakt />
+      </Switch>
+    </BrowserRouter>
   )
 }

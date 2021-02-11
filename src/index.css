@@ -573,6 +573,28 @@ input::placeholder {
   margin: 0 15px;
 }
 
+/* PAGE TRANSITION */
+
+.start-container,
+.profile-container,
+.form-container,
+.list-container,
+.start-container,
+.info-wrapper {
+  animation: transitionIn 1s;
+}
+
+@keyframes transitionIn {
+  from {
+    opacity: 0;
+    transform: rotateX(-15deg);
+  }
+  to {
+      opacity: 1;
+      transform: rotateX(0);
+  }
+}
+
 /* MEDIA QUERIES */
 
 @media (min-width: 320px) and (max-width: 480px) {
@@ -710,4 +732,4 @@ h1 {
 .list-card {
   width: 290px;
 }
-}
+} 

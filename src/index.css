@@ -298,7 +298,7 @@ ul {
 
 .form {
   margin-top: 90px;
-  margin-bottom: -32px;
+  margin-bottom: -3px;
 	height: 400px;
 	width: 350px;
 	padding: 30px;
@@ -369,7 +369,7 @@ input::placeholder {
 	border: none;
   cursor: pointer;
   width: 350px;
-  height: 32px;
+  height: 45px;
   background-color: #616161;
 }
 
@@ -545,7 +545,6 @@ input::placeholder {
 }
 
 .info-container a {
-  text-decoration: none;
   color: #000;
 }
 

@@ -11,18 +11,19 @@ import { Error } from './Components/Error'
 import { Info } from './Pages/Info'
 
 export const App = () => {
-  return (
-    <BrowserRouter>
-      <Navbar />
-      <Switch>
-        <Route path="/" component={StartPage} exact />
-        <Route path="/home" component={Home} exact />
-        <Route path="/users" component={Users} exakt />
-        <Route path="/signIn" component={SignIn} exakt />
-        <Route path="/profile" component={Profile} exakt />
-        <Route path="/error" component={Error} exakt />
-        <Route path="/info" component={Info} exakt />
-      </Switch>
-    </BrowserRouter>
-  )
+	return (
+		<BrowserRouter>
+			<Navbar />
+			<Switch>
+				<Route path='/' component={StartPage} exact />
+				<Route path='/home' component={Home} exact />
+				<Route path='/users' component={Users} exakt />
+				<Route path='/signIn' component={SignIn} exakt />
+				<Route path='/profile' component={Profile} exakt />
+				<Route path='/info' component={Info} exakt />
+				<Route path='/404' component={Error} exakt />
+				<Redirect to='/404' component={Error} exakt />
+			</Switch>
+		</BrowserRouter>
+	)
 }

@@ -22,7 +22,7 @@ export const App = () => {
 				<Route path='/profile' component={Profile} exakt />
 				<Route path='/info' component={Info} exakt />
 				<Route path='/404' component={Error} exakt />
-				<Redirect to='/404' component={Error} exakt />
+				<Redirect to='/404'/>
 			</Switch>
 		</BrowserRouter>
 	)

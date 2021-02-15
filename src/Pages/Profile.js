@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 
 import { getDataUrl, listUrl } from '../Paths/api-paths'
 import Loader from '../Components/Loader'
-import { Error } from '../Components/Error'
 
 export const Profile = () => {
 	const [loading, setLoading] = useState(true)

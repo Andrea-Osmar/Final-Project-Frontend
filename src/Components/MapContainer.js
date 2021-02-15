@@ -1,9 +1,6 @@
 import React, { useState } from 'react'
 import { Map, Marker, InfoWindow, GoogleApiWrapper } from 'google-maps-react'
 
-import React, { useState } from 'react'
-import { Map, Marker, InfoWindow, GoogleApiWrapper } from 'google-maps-react'
-
 const apiKey = process.env.REACT_APP_GOOGLE_KEY
 
 export const MapContainer = (props) => {
